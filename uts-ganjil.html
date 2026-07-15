@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Tengah Semester (UTS) | Sejarah Indonesia Kelas X</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold-primary: #D4AF37; --gold-light: #F2D06B; --dark-navy: #0F172A;
+            --dark-charcoal: #1E293B; --cream-bg: #F9F9F7; --text-dark: #334155;
+            --text-light: #F9F9F7; --shadow-luxury: 0 20px 40px rgba(15, 23, 42, 0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--cream-bg); color: var(--text-dark); line-height: 1.8; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--dark-navy); }
+        a { text-decoration: none; color: var(--gold-primary); transition: all 0.3s ease; }
+        a:hover { color: var(--dark-navy); }
+
+        .top-nav { background: var(--dark-navy); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--gold-primary); flex-wrap: wrap; gap: 1rem; }
+        .top-nav a { color: var(--text-light); font-size: 0.95rem; margin-left: 1.5rem; font-weight: 500; }
+        .top-nav a:hover { color: var(--gold-primary); }
+        .brand { color: var(--gold-primary) !important; font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; margin-left: 0 !important; }
+
+        .container { max-width: 1000px; margin: 3rem auto; padding: 0 1.5rem; }
+        .card { background: white; border-radius: 16px; padding: 2.5rem; margin-bottom: 2rem; box-shadow: var(--shadow-luxury); border-top: 4px solid var(--gold-primary); }
+        .card-header { text-align: center; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px dashed #CBD5E1; }
+        .card-header h2 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+        .badge { display: inline-block; background: var(--dark-navy); color: var(--gold-primary); padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.9rem; font-weight: 700; letter-spacing: 1px; margin-top: 1rem; }
+
+        .info-box { background: linear-gradient(135deg, #F0F4F8 0%, #E2E8F0 100%); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border-left: 4px solid var(--gold-primary); }
+        .info-box strong { color: var(--dark-navy); }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--dark-charcoal); }
+        .form-group input, .form-group select { width: 100%; padding: 0.8rem 1rem; border: 1px solid #CBD5E1; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 1rem; transition: border-color 0.3s; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--gold-primary); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1); }
+
+        .soal-item { margin-bottom: 2rem; padding: 1.8rem; background: #F8FAFC; border-radius: 12px; border-left: 4px solid var(--dark-navy); transition: transform 0.2s; }
+        .soal-item:hover { transform: translateX(3px); }
+        .narasi { background: white; padding: 1rem 1.2rem; border-radius: 8px; margin-bottom: 1rem; font-style: italic; color: var(--dark-charcoal); border: 1px solid #E2E8F0; font-size: 0.98rem; line-height: 1.7; }
+        .narasi::before { content: '📖 '; font-style: normal; }
+        .soal-item > p.soal-text { font-weight: 600; margin-bottom: 1rem; font-size: 1.05rem; color: var(--dark-navy); }
+        .options label { display: block; padding: 0.6rem 0.8rem; cursor: pointer; transition: all 0.2s; border-radius: 6px; margin-bottom: 0.3rem; }
+        .options label:hover { background: rgba(212, 175, 55, 0.1); color: var(--dark-navy); }
+        .options input[type="radio"] { margin-right: 0.8rem; accent-color: var(--gold-primary); }
+
+        textarea { width: 100%; padding: 1rem; border: 1px solid #CBD5E1; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 1rem; resize: vertical; min-height: 140px; }
+        textarea:focus { outline: none; border-color: var(--gold-primary); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1); }
+
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.9rem 1.8rem; border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer; border: none; transition: all 0.3s ease; text-align: center; }
+        .btn-primary { background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%); color: var(--dark-navy); width: 100%; margin-top: 1rem; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-outline { background: transparent; border: 2px solid var(--dark-navy); color: var(--dark-navy); margin-top: 1rem; }
+        .btn-outline:hover { background: var(--dark-navy); color: var(--gold-primary); }
+        .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+
+        .result-box { display: none; background: var(--dark-navy); color: var(--text-light); padding: 2rem; border-radius: 12px; text-align: center; margin-top: 2rem; }
+        .result-box h3 { color: var(--gold-primary); font-size: 1.8rem; margin-bottom: 1rem; }
+        .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .score-item { background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.3); }
+        .score-item .value { font-size: 2rem; font-weight: 700; color: var(--gold-primary); font-family: 'Playfair Display', serif; }
+        .score-item .label { font-size: 0.9rem; opacity: 0.8; }
+
+        .progress-indicator { background: white; padding: 1rem 1.5rem; border-radius: 50px; box-shadow: var(--shadow-luxury); display: inline-flex; gap: 1rem; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; }
+        .progress-indicator span { font-size: 0.9rem; font-weight: 600; }
+        .progress-indicator .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold-primary); }
+
+        footer { background: var(--dark-navy); color: #94A3B8; text-align: center; padding: 2.5rem 1rem; margin-top: 4rem; border-top: 3px solid var(--gold-primary); }
+        footer p { margin-bottom: 0.5rem; }
+        footer a { color: var(--gold-primary); }
+
+        @media (max-width: 768px) {
+            .top-nav { flex-direction: column; text-align: center; }
+            .top-nav a { margin: 0 0.5rem; }
+            .card { padding: 1.5rem; }
+            .soal-item { padding: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <a href="index.html" class="brand">Sejarah Indonesia Kelas X</a>
+        <div>
+            <a href="index.html">Beranda</a>
+            <a href="1.html">Materi Bab 1</a>
+            <a href="index.html#daftar-isi">Daftar Bab</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form id="utsForm">
+            <!-- Header UTS -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="badge">UJIAN TENGAH SEMESTER (UTS) — GANJIL</span>
+                    <h2 style="margin-top: 1rem;">Ujian Tengah Semester</h2>
+                    <p style="font-size: 1.2rem; color: var(--text-dark); font-weight: 500;">Sejarah Indonesia — Kelas X</p>
+                    <p style="color: #64748B; margin-top: 0.5rem;">Materi: Bab 1 (Berpikir Sejarah) & Bab 2 (Manusia Purba dan Masyarakat Praaksara)</p>
+                    <div class="info-box" style="text-align: left; margin-top: 1.5rem;">
+                        <p><strong>📌 Petunjuk Pengerjaan:</strong></p>
+                        <p>• Bagian A: <strong>35 soal Pilihan Ganda HOTS</strong> (bobor 2 poin/soal = 70 poin)</p>
+                        <p>• Bagian B: <strong>5 soal Essay</strong> (bobot 6 poin/soal = 30 poin)</p>
+                        <p>• <strong>Total Skor: 100 poin</strong></p>
+                        <p>• Waktu: 90 menit | Sifat Ujian: Tutup Buku</p>
+                        <p>• Setiap soal PG memiliki <em>narasi stimulus</em> berupa teori, kasus, atau data. Bacalah dengan cermat sebelum menjawab.</p>
+                    </div>
+                </div>
+
+                <!-- Data Siswa -->
+                <h3 style="margin-bottom: 1.5rem; border-bottom: 2px solid var(--gold-primary); display: inline-block; padding-bottom: 0.3rem;">📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap siswa">
+                    </div>
+                    <div class="form-group">
+                        <label for="nis">NIS *</label>
+                        <input type="text" id="nis" name="nis" required placeholder="Masukkan Nomor Induk Siswa">
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">📅 Tanggal Ujian</label>
+                        <input type="date" id="tanggal" name="tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kelas">Kelas</label>
+                        <select id="kelas" name="kelas" required>
+                            <option value="">Pilih Kelas</option>
+                            <option value="X-1">X-1</option>
+                            <option value="X-2">X-2</option>
+                            <option value="X-3">X-3</option>
+                            <option value="X-4">X-4</option>
+                            <option value="X-5">X-5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================
+                 BAGIAN A: 35 SOAL PG HOTS
+                 ========================================= -->
+            <div class="card">
+                <h3 style="margin-bottom: 0.5rem;">📋 Bagian A – Pilihan Ganda HOTS (35 Soal)</h3>
+                <p style="color: #EF4444; font-size: 0.9rem; margin-bottom: 1.5rem; font-weight: 600;">⚠️ Bacalah narasi pada setiap soal dengan saksama. Setiap soal bernilai 2 poin.</p>
+
+                <!-- SOAL 1 -->
+                <div class="soal-item">
+                    <div class="narasi">Pada 16 Agustus 1945, para pemuda mendesak Soekarno untuk segera memproklamasikan kemerdekaan. Peristiwa ini dicatat secara berbeda oleh Chaerul Saleh dalam memoarnya ("Kami Menggugat", 1947) yang menekankan peran pemuda, dan oleh Soekarno dalam pidato-pidatonya yang lebih menekankan konsensus para tokoh tua. Kedua versi ini sama-sama otentik namun memberikan penekanan yang berbeda.</div>
+                    <p class="soal-text">Berdasarkan narasi di atas, konsep berpikir sejarah yang paling tepat untuk menjelaskan perbedaan kedua versi peristiwa tersebut adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="a"> a) Peristiwa sejarah hanya memiliki satu kebenaran mutlak yang harus diterima</label>
+                        <label><input type="radio" name="q1" value="b"> b) Subjektivitas dalam penulisan sejarah dipengaruhi oleh posisi dan kepentingan penulisnya</label>
+                        <label><input type="radio" name="q1" value="c"> c) Salah satu versi pasti merupakan pemalsuan yang harus ditolak</label>
+                        <label><input type="radio" name="q1" value="d"> d) Sejarah tidak memiliki nilai ilmiah karena bersifat relatif</label>
+                        <label><input type="radio" name="q1" value="e"> e) Peristiwa sejarah hanya dapat dipahami melalui satu sudut pandang saja</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 2 -->
+                <div class="soal-item">
+                    <div class="narasi">Seorang sejarawan meneliti perkembangan ekonomi Indonesia dari masa Orde Lama hingga Reformasi (1950-2000). Ia membandingkan kebijakan ekonomi tiap presiden, melihat inflasi, pertumbuhan GDP, dan struktur ekspor-impor secara detail pada setiap periode, tanpa menghubungkan antarperiode secara kronologis panjang.</div>
+                    <p class="soal-text">Pendekatan yang digunakan sejarawan tersebut dalam berpikir sejarah adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="a"> a) Diakronik, karena memanjang dalam waktu</label>
+                        <label><input type="radio" name="q2" value="b"> b) Sinkronik, karena menganalisis struktur pada waktu tertentu secara mendalam</label>
+                        <label><input type="radio" name="q2" value="c"> c) Kronologis murni, karena hanya menyusun urutan waktu</label>
+                        <label><input type="radio" name="q2" value="d"> d) Historiografi tradisional, karena meniru gaya babad</label>
+                        <label><input type="radio" name="q2" value="e"> e) Anachronism, karena mencampuradukkan zaman</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 3 -->
+                <div class="soal-item">
+                    <div class="narasi">Dalam penelitian tentang Peristiwa 1965, seorang sejarawan menemukan dokumen arsip dari Kementerian Luar Negeri AS yang baru dideklasifikasi pada 2017. Dokumen ini berisi komunikasi diplomatik yang mengungkap posisi pemerintah AS terhadap peristiwa di Indonesia. Sejarawan tersebut pertama-tama memeriksa fisik dokumen: jenis kertas, tinta, watermark, dan kesesuaian format dengan dokumen resmi era 1960-an.</div>
+                    <p class="soal-text">Tahapan metode penelitian sejarah yang sedang dilakukan sejarawan tersebut adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="a"> a) Kritik internal, karena menguji kredibilitas isi dokumen</label>
+                        <label><input type="radio" name="q3" value="b"> b) Interpretasi, karena memberikan makna terhadap dokumen</label>
+                        <label><input type="radio" name="q3" value="c"> c) Kritik eksternal, karena menguji keaslian fisik sumber</label>
+                        <label><input type="radio" name="q3" value="d"> d) Historiografi, karena menulis ulang peristiwa</label>
+                        <label><input type="radio" name="q3" value="e"> e) Heuristik, karena baru mengumpulkan sumber</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 4 -->
+                <div class="soal-item">
+                    <div class="narasi">Perhatikan dua pernyataan berikut: (1) "Pada 17 Agustus 1945, kemerdekaan Indonesia diproklamasikan." (2) "Proklamasi kemerdekaan merupakan puncak perjuangan bangsa Indonesia yang telah berlangsung selama ratusan tahun melawan kolonialisme." Pernyataan pertama bersifat faktual, sedangkan pernyataan kedua merupakan hasil penafsiran sejarawan terhadap makna peristiwa.</div>
+                    <p class="soal-text">Dalam konsep berpikir sejarah, pernyataan (2) termasuk dalam kategori...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="a"> a) Fakta sejarah</label>
+                        <label><input type="radio" name="q4" value="b"> b) Konsep sejarah</label>
+                        <label><input type="radio" name="q4" value="c"> c) Generalisasi sejarah</label>
+                        <label><input type="radio" name="q4" value="d"> d) Periodisasi sejarah</label>
+                        <label><input type="radio" name="q4" value="e"> e) Kronologi sejarah</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 5 -->
+                <div class="soal-item">
+                    <div class="narasi">Seorang peneliti ingin menulis sejarah tentang kehidupan masyarakat Jawa pada masa Kerajaan Majapahit. Ia menggunakan Kitab Negarakertagama karya Mpu Prapanca (1365) sebagai sumber utama. Namun, ia juga menyadari bahwa kitab ini ditulis atas perintah Raja Hayam Wuruk, sehingga kemungkinan besar berisi pujian terhadap raja dan tidak menggambarkan kondisi rakyat jelata secara utuh.</div>
+                    <p class="soal-text">Langkah kritis yang paling tepat dilakukan peneliti tersebut adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="a"> a) Menolak seluruh isi kitab karena dianggap propaganda</label>
+                        <label><input type="radio" name="q5" value="b"> b) Menerima seluruh isi kitab sebagai kebenaran mutlak</label>
+                        <label><input type="radio" name="q5" value="c"> c) Melakukan kritik internal untuk menguji kredibilitas isi, dan membandingkan dengan sumber lain (prasasti, arkeologi, catatan asing)</label>
+                        <label><input type="radio" name="q5" value="d"> d) Hanya menggunakan sumber lisan dari masyarakat Jawa masa kini</label>
+                        <label><input type="radio" name="q5" value="e"> e) Menulis ulang kitab tersebut dengan gaya modern</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 6 -->
+                <div class="soal-item">
+                    <div class="narasi">Historiografi Indonesia mengalami perkembangan dari masa ke masa. Pada masa kolonial, sejarah ditulis oleh orang Belanda dengan sudut pandang Eropa-sentris (misalnya karya Van Vollenhoven). Setelah kemerdekaan, muncul historiografi nasional yang menempatkan bangsa Indonesia sebagai subjek. Kini, berkembang historiografi yang lebih kritis dan multidimensi.</div>
+                    <p class="soal-text">Pergeseran dari historiografi kolonial ke historiografi nasional mencerminkan...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="a"> a) Kemunduran kualitas ilmiah penulisan sejarah</label>
+                        <label><input type="radio" name="q6" value="b"> b) Pengaruh konteks politik dan ideologi terhadap cara pandang sejarawan</label>
+                        <label><input type="radio" name="q6" value="c"> c) Ketidakmampuan sejarawan Indonesia menulis secara objektif</label>
+                        <label><input type="radio" name="q6" value="d"> d) Penghapusan total nilai-nilai ilmiah dari penulisan sejarah</label>
+                        <label><input type="radio" name="q6" value="e"> e) Kembali ke gaya penulisan sejarah tradisional seperti babad</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 7 -->
+                <div class="soal-item">
+                    <div class="narasi">Pak Ahmad, seorang guru sejarah, mengajak siswanya berkunjung ke Museum Sumpah Pemuda di Jakarta. Di sana, siswa melihat replika naskah Sumpah Pemuda 1928, foto para pemuda, dan diorama peristiwa Kongres Pemuda II. Pengalaman ini membuat siswa merasa "hadir" dalam peristiwa masa lalu dan memahami semangat persatuan generasi muda saat itu.</div>
+                    <p class="soal-text">Kegunaan sejarah yang paling dominan dalam kasus di atas adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="a"> a) Edukatif, karena memberikan pelajaran moral</label>
+                        <label><input type="radio" name="q7" value="b"> b) Inspiratif, karena memberikan semangat kreativitas</label>
+                        <label><input type="radio" name="q7" value="c"> c) Rekreatif, karena memberikan pengalaman intelektual yang menyenangkan seperti "menjelajahi masa lalu"</label>
+                        <label><input type="radio" name="q7" value="d"> d) Instruktif, karena memberikan keterampilan teknis</label>
+                        <label><input type="radio" name="q7" value="e"> e) Politis, karena mendukung kepentingan partai tertentu</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 8 -->
+                <div class="soal-item">
+                    <div class="narasi">Seorang siswa menemukan sebuah blog yang mengklaim bahwa "Majapahit sebenarnya adalah kerajaan Yahudi yang menyembunyikan identitas aslinya." Klaim ini tidak didukung oleh sumber primer, tidak merujuk pada penelitian arkeologis manapun, dan bertentangan dengan konsensus ilmiah yang dibangun dari ratusan prasasti dan naskah kuno.</div>
+                    <p class="soal-text">Analisis paling tepat terhadap klaim di atas berdasarkan prinsip metode sejarah adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="a"> a) Klaim tersebut sah sebagai alternatif interpretasi sejarah</label>
+                        <label><input type="radio" name="q8" value="b"> b) Klaim tersebut harus diterima karena setiap orang berhak berpendapat</label>
+                        <label><input type="radio" name="q8" value="c"> c) Klaim tersebut tidak ilmiah karena tidak melalui proses verifikasi (kritik sumber) dan tidak didukung bukti</label>
+                        <label><input type="radio" name="q8" value="d"> d) Klaim tersebut merupakan historiografi modern yang progresif</label>
+                        <label><input type="radio" name="q8" value="e"> e) Klaim tersebut lebih valid daripada buku teks sekolah</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 9 -->
+                <div class="soal-item">
+                    <div class="narasi">Konsep "ruang" dalam sejarah menekankan bahwa setiap peristiwa terjadi di lokasi tertentu dan dipengaruhi oleh kondisi geografis, sosial, dan budaya setempat. Misalnya, Peristiwa Rengasdengklok tidak dapat dipisahkan dari konteks lokasi (rumah pengasingan di Karawang) dan situasi politik Jakarta saat itu.</div>
+                    <p class="soal-text">Mengapa konsep ruang penting dalam memahami peristiwa sejarah?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="a"> a) Karena sejarah hanya berlaku di satu tempat dan tidak dapat dibandingkan</label>
+                        <label><input type="radio" name="q9" value="b"> b) Karena ruang memberikan konteks geografis dan kultural yang memengaruhi karakter peristiwa</label>
+                        <label><input type="radio" name="q9" value="c"> c) Karena ruang lebih penting daripada waktu dalam sejarah</label>
+                        <label><input type="radio" name="q9" value="d"> d) Karena ruang menentukan kebenaran suatu peristiwa</label>
+                        <label><input type="radio" name="q9" value="e"> e) Karena ruang hanya relevan untuk sejarah kuno</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 10 -->
+                <div class="soal-item">
+                    <div class="narasi">Tradisi lisan tentang asal-usul masyarakat Minangkabau menyebutkan bahwa nenek moyang mereka turun dari langit di puncak Gunung Marapi. Cerita ini diwariskan secara turun-temurun melalui cerita rakyat, pantun, dan khotbah Jumat. Bagi masyarakat setempat, cerita ini memiliki nilai sakral dan menjadi bagian dari identitas mereka.</div>
+                    <p class="soal-text">Bagi seorang sejarawan profesional, pendekatan paling tepat terhadap tradisi lisan tersebut adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="a"> a) Menolaknya sepenuhnya karena bukan fakta sejarah</label>
+                        <label><input type="radio" name="q10" value="b"> b) Menerimanya sebagai kebenaran historis tanpa kritik</label>
+                        <label><input type="radio" name="q10" value="c"> c) Menganalisisnya sebagai sumber sejarah yang mengandung nilai budaya, mitologi, dan kemungkinan inti historis yang perlu diverifikasi dengan sumber lain</label>
+                        <label><input type="radio" name="q10" value="d"> d) Menggantinya dengan versi sejarah yang lebih "ilmiah"</label>
+                        <label><input type="radio" name="q10" value="e"> e) Mengabaikannya karena tidak tertulis</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 11 -->
+                <div class="soal-item">
+                    <div class="narasi">Dalam sebuah penelitian tentang Pertempuran Surabaya (10 November 1945), sejarawan menggunakan sumber berikut: (1) Surat keputusan pemerintah Belanda tahun 1946, (2) Buku teks sejarah terbitan 2020, (3) Rekaman wawancara dengan veteran tahun 1995, (4) Foto jurnalistik dari koran Inggris edisi November 1945.</div>
+                    <p class="soal-text">Dari keempat sumber di atas, yang termasuk sumber primer adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q11" value="a"> a) (1) dan (2) saja</label>
+                        <label><input type="radio" name="q11" value="b"> b) (1), (3), dan (4)</label>
+                        <label><input type="radio" name="q11" value="c"> c) (2) dan (3) saja</label>
+                        <label><input type="radio" name="q11" value="d"> d) (4) saja</label>
+                        <label><input type="radio" name="q11" value="e"> e) Semua sumber adalah primer</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 12 -->
+                <div class="soal-item">
+                    <div class="narasi">Seorang sejarawan menulis: "Kegagalan Demokrasi Liberal (1950-1959) disebabkan oleh dominannya kepentingan partai politik di atas kepentingan nasional, sehingga kabinet silih berganti dan program pembangunan tidak berjalan." Pernyataan ini merupakan kesimpulan umum yang ditarik dari berbagai fakta spesifik tentang jatuh-bangunnya kabinet pada masa itu.</div>
+                    <p class="soal-text">Dalam konsep berpikir sejarah, pernyataan di atas merupakan contoh dari...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q12" value="a"> a) Fakta sejarah tunggal</label>
+                        <label><input type="radio" name="q12" value="b"> b) Kronologi peristiwa</label>
+                        <label><input type="radio" name="q12" value="c"> c) Generalisasi historis</label>
+                        <label><input type="radio" name="q12" value="d"> d) Periodisasi</label>
+                        <label><input type="radio" name="q12" value="e"> e) Sumber primer</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 13 -->
+                <div class="soal-item">
+                    <div class="narasi">Perhatikan pernyataan berikut: (1) Sejarah sebagai seni, (2) Sejarah sebagai ilmu, (3) Sejarah sebagai kisah, (4) Sejarah sebagai peristiwa. Seorang sejarawan harus menyeimbangkan keempat dimensi ini dalam pekerjaannya. Ia harus kreatif dalam menulis (seni), ketat dalam metode (ilmu), sadar akan subjektivitas narasi (kisah), dan berpijak pada realitas masa lalu (peristiwa).</div>
+                    <p class="soal-text">Jika seorang sejarawan hanya menekankan aspek "sejarah sebagai ilmu" dan mengabaikan aspek "sejarah sebagai seni", maka risiko yang muncul adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q13" value="a"> a) Tulisan sejarah menjadi terlalu fiktif dan tidak ilmiah</label>
+                        <label><input type="radio" name="q13" value="b"> b) Tulisan sejarah menjadi kaku, sulit dibaca, dan kurang mampu menghidupkan peristiwa masa lalu</label>
+                        <label><input type="radio" name="q13" value="c"> c) Tulisan sejarah menjadi propaganda politik</label>
+                        <label><input type="radio" name="q13" value="d"> d) Tulisan sejarah menjadi tidak relevan dengan masa kini</label>
+                        <label><input type="radio" name="q13" value="e"> e) Tulisan sejarah menjadi terlalu subjektif</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 14 -->
+                <div class="soal-item">
+                    <div class="narasi">Dalam konferensi internasional tentang sejarah Asia Tenggara, seorang sejarawan Indonesia mempresentasikan penelitian tentang Sriwijaya dari perspektif maritim. Sejarawan Malaysia mempresentasikan Sriwijaya dari perspektif agraris pedalaman. Sejarawan Singapura menyoroti aspek jaringan perdagangan. Ketiganya menggunakan sumber yang sama tetapi menghasilkan interpretasi berbeda.</div>
+                    <p class="soal-text">Fenomena ini menunjukkan bahwa dalam berpikir sejarah berlaku prinsip...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q14" value="a"> a) Monodimensi, karena hanya ada satu cara menafsirkan</label>
+                        <label><input type="radio" name="q14" value="b"> b) Multiperspektif, karena peristiwa yang sama dapat ditafsirkan dari berbagai sudut pandang</label>
+                        <label><input type="radio" name="q14" value="c"> c) Absolutisme, karena hanya satu interpretasi yang benar</label>
+                        <label><input type="radio" name="q14" value="d"> d) Relativisme total, karena semua interpretasi sama benarnya</label>
+                        <label><input type="radio" name="q14" value="e"> e) Determinisme geografis, karena lokasi menentukan segalanya</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 15 -->
+                <div class="soal-item">
+                    <div class="narasi">Seorang siswa menulis tugas sejarah: "Perang Diponegoro (1825-1830) terjadi karena Pangeran Diponegoro marah kepada Belanda. Ia memimpin rakyat Jawa untuk melawan. Akhirnya ia kalah dan ditangkap." Tulisan ini hanya menyebutkan urutan peristiwa tanpa analisis sebab-akibat yang mendalam atau konteks sosial-politik yang lebih luas.</div>
+                    <p class="soal-text">Kritik paling tepat terhadap tulisan siswa tersebut adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q15" value="a"> a) Tulisan sudah bagus karena kronologisnya benar</label>
+                        <label><input type="radio" name="q15" value="b"> b) Tulisan bersifat deskriptif-evental, belum menunjukkan berpikir sejarah yang analitis</label>
+                        <label><input type="radio" name="q15" value="c"> c) Tulisan terlalu panjang dan bertele-tele</label>
+                        <label><input type="radio" name="q15" value="d"> d) Tulisan sudah menggunakan metode sejarah yang benar</label>
+                        <label><input type="radio" name="q15" value="e"> e) Tulisan sudah termasuk historiografi modern</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 16 - MULAI BAB 2 -->
+                <div class="soal-item">
+                    <div class="narasi">Pada tahun 1891, Eugene Dubois menemukan fosil tengkorak di Trinil, tepi Sungai Bengawan Solo. Fosil ini memiliki volume otak sekitar 900 cc, tonjolan kening yang tebal, dan tidak memiliki dagu. Dubois menamakannya <em>Pithecanthropus erectus</em> yang berarti "manusia kera yang berjalan tegak". Penemuan ini menjadi bukti penting bahwa Indonesia memiliki jalur evolusi manusia yang signifikan.</div>
+                    <p class="soal-text">Berdasarkan ciri-ciri fisik yang disebutkan, <em>Pithecanthropus erectus</em> termasuk dalam tahapan evolusi...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q16" value="a"> a) Meganthropus, karena bertubuh sangat besar</label>
+                        <label><input type="radio" name="q16" value="b"> b) Australopithecus, karena masih menyerupai kera</label>
+                        <label><input type="radio" name="q16" value="c"> c) Pithecanthropus, karena peralihan antara kera dan manusia modern</label>
+                        <label><input type="radio" name="q16" value="d"> d) Homo sapiens, karena sudah berjalan tegak sempurna</label>
+                        <label><input type="radio" name="q16" value="e"> e) Homo floresiensis, karena ditemukan di Indonesia</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 17 -->
+                <div class="soal-item">
+                    <div class="narasi">Situs Sangiran di Jawa Tengah ditetapkan sebagai Warisan Dunia UNESCO pada 1996. Di situs ini ditemukan lebih dari 100 fosil manusia purba dari berbagai periode, mulai dari <em>Meganthropus</em> hingga <em>Homo soloensis</em>. Keberagaman temuan ini menunjukkan bahwa wilayah Sangiran telah dihuni secara berkelanjutan selama hampir 1,5 juta tahun.</div>
+                    <p class="soal-text">Signifikansi utama Situs Sangiran dalam studi prasejarah dunia adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q17" value="a"> a) Menunjukkan bahwa manusia purba hanya ada di Jawa</label>
+                        <label><input type="radio" name="q17" value="b"> b) Memberikan rekaman evolusi manusia yang lengkap dan berkelanjutan dalam satu kawasan</label>
+                        <label><input type="radio" name="q17" value="c"> c) Membuktikan bahwa manusia berasal dari Indonesia</label>
+                        <label><input type="radio" name="q17" value="d"> d) Menunjukkan bahwa manusia purba tidak pernah bermigrasi</label>
+                        <label><input type="radio" name="q17" value="e"> e) Menjadi satu-satunya situs prasejarah di Asia Tenggara</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 18 -->
+                <div class="soal-item">
+                    <div class="narasi">Pada 2003, tim arkeolog Indonesia-Australia menemukan fosil manusia berukuran kecil (tinggi ±1 m, volume otak ±380 cc) di Liang Bua, Flores. Fosil ini dinamai <em>Homo floresiensis</em> dan diperkirakan hidup sekitar 18.000 tahun lalu, sezaman dengan <em>Homo sapiens</em>. Penemuan ini mengguncang dunia karena menunjukkan adanya spesies manusia lain yang hidup berdampingan dengan manusia modern.</div>
+                    <p class="soal-text">Implikasi paling penting dari penemuan <em>Homo floresiensis</em> terhadap pemahaman evolusi manusia adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q18" value="a"> a) Membuktikan bahwa evolusi manusia bersifat linear dan sederhana</label>
+                        <label><input type="radio" name="q18" value="b"> b) Menunjukkan bahwa evolusi manusia bersifat bercabang (bushy), dengan beberapa spesies dapat hidup sezaman</label>
+                        <label><input type="radio" name="q18" value="c"> c) Menghapus seluruh teori evolusi yang ada sebelumnya</label>
+                        <label><input type="radio" name="q18" value="d"> d) Menunjukkan bahwa manusia kecil tidak cerdas</label>
+                        <label><input type="radio" name="q18" value="e"> e) Membuktikan bahwa manusia purba tidak pernah ada di Asia</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 19 -->
+                <div class="soal-item">
+                    <div class="narasi">Pada masa Paleolitikum di Indonesia, manusia purba seperti <em>Pithecanthropus</em> hidup secara nomaden (berpindah-pindah) dan bergantung pada alam untuk memenuhi kebutuhan pangan. Mereka berburu binatang dan mengumpulkan umbi-umbian serta buah-buahan. Alat yang digunakan masih sangat sederhana, seperti kapak genggam dan alat serpih (<em>flakes</em>).</div>
+                    <p class="soal-text">Karakteristik utama kehidupan sosial-ekonomi manusia pada masa Paleolitikum adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q19" value="a"> a) Sudah menetap dan bercocok tanam</label>
+                        <label><input type="radio" name="q19" value="b"> b) Nomaden, food gathering, dan hidup dalam kelompok kecil</label>
+                        <label><input type="radio" name="q19" value="c"> c) Sudah mengenal perdagangan internasional</label>
+                        <label><input type="radio" name="q19" value="d"> d) Memiliki sistem pemerintahan yang kompleks</label>
+                        <label><input type="radio" name="q19" value="e"> e) Sudah mengenal tulisan dan logam</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 20 -->
+                <div class="soal-item">
+                    <div class="narasi">Di wilayah Indonesia Timur, ditemukan tumpukan sampah dapur (<em>kjokkenmoddinger</em>) yang berisi cangkang kerang dan tulang binatang, serta gua-gaung yang menjadi tempat tinggal sementara (<em>abris sous roche</em>). Temuan ini menunjukkan bahwa manusia Mesolitikum sudah mulai hidup semi-sedenter di daerah pesisir dan gua, meskipun masih berburu-meramu.</div>
+                    <p class="soal-text">Perbedaan mendasar antara kehidupan manusia Mesolitikum dengan Paleolitikum adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q20" value="a"> a) Mesolitikum sudah bercocok tanam, Paleolitikum belum</label>
+                        <label><input type="radio" name="q20" value="b"> b) Mesolitikum mulai hidup semi-sedenter di lokasi tertentu, sementara Paleolitikum sepenuhnya nomaden</label>
+                        <label><input type="radio" name="q20" value="c"> c) Mesolitikum sudah mengenal logam</label>
+                        <label><input type="radio" name="q20" value="d"> d) Mesolitikum sudah memiliki tulisan</label>
+                        <label><input type="radio" name="q20" value="e"> e) Mesolitikum tidak lagi berburu</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 21 -->
+                <div class="soal-item">
+                    <div class="narasi">Sekitar 4000 SM, terjadi perubahan besar dalam kehidupan manusia di Nusantara. Manusia mulai menetap, bercocok tanam (menanam umbi, sayur, dan padi), serta memelihara hewan. Alat-alat batu sudah diasah halus, seperti kapak persegi yang menyebar dari Asia daratan ke Indonesia Barat, dan kapak lonjong yang menyebar dari Indonesia Timur.</div>
+                    <p class="soal-text">Perubahan besar yang terjadi pada masa Neolitikum ini dikenal dalam ilmu sejarah sebagai...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q21" value="a"> a) Revolusi Industri</label>
+                        <label><input type="radio" name="q21" value="b"> b) Revolusi Neolitik</label>
+                        <label><input type="radio" name="q21" value="c"> c) Revolusi Prancis</label>
+                        <label><input type="radio" name="q21" value="d"> d) Revolusi Hijau</label>
+                        <label><input type="radio" name="q21" value="e"> e) Revolusi Digital</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 22 -->
+                <div class="soal-item">
+                    <div class="narasi">Punden berundak, menhir, dolmen, sarkofagus, dan waruga adalah bangunan-bangunan batu besar yang dibangun pada masa Megalitikum. Di Indonesia, tradisi ini masih hidup di beberapa daerah seperti Nias, Sumba, Toraja, dan Batak hingga masa modern. Bangunan-bangunan ini umumnya terkait dengan kepercayaan terhadap roh nenek moyang.</div>
+                    <p class="soal-text">Fungsi utama bangunan megalitikum dalam kehidupan masyarakat praaksara adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q22" value="a"> a) Sebagai tempat tinggal sehari-hari</label>
+                        <label><input type="radio" name="q22" value="b"> b) Sebagai sarana perdagangan</label>
+                        <label><input type="radio" name="q22" value="c"> c) Sebagai sarana pemujaan roh nenek moyang dan penguburan</label>
+                        <label><input type="radio" name="q22" value="d"> d) Sebagai benteng pertahanan militer</label>
+                        <label><input type="radio" name="q22" value="e"> e) Sebagai pasar tradisional</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 23 -->
+                <div class="soal-item">
+                    <div class="narasi">Dalam gua-gua di Sulawesi Selatan (seperti Gua Leang-Leang) dan Kalimantan Timur (gua-gua di Sangkimah), ditemukan lukisan-lukisan dinding berusia sekitar 40.000 tahun. Lukisan ini menggambarkan cap tangan, babi rusa, dan banteng. Di Eropa, lukisan gua serupa ditemukan di Lascaux (Prancis) dan Altamira (Spanyol).</div>
+                    <p class="soal-text">Makna penting dari lukisan gua di Indonesia bagi sejarah seni dunia adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q23" value="a"> a) Membuktikan bahwa seni hanya berkembang di Eropa</label>
+                        <label><input type="radio" name="q23" value="b"> b) Menunjukkan bahwa tradisi seni rupa prasejarah berkembang secara independen di berbagai belahan dunia, termasuk Asia Tenggara</label>
+                        <label><input type="radio" name="q23" value="c"> c) Menunjukkan bahwa manusia purba tidak memiliki kemampuan artistik</label>
+                        <label><input type="radio" name="q23" value="d"> d) Membuktikan bahwa lukisan gua hanya dibuat untuk dekorasi</label>
+                        <label><input type="radio" name="q23" value="e"> e) Menunjukkan bahwa seni tidak memiliki hubungan dengan kepercayaan</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 24 -->
+                <div class="soal-item">
+                    <div class="narasi">Nekara dan moko adalah benda perunggu berhiaskan motif geometris dan figuratif yang ditemukan tersebar dari Vietnam hingga Kepulauan Alor. Di Indonesia, nekara paling terkenal adalah Nekara Pejeng di Bali (nekara terbesar di dunia). Benda-benda ini diproduksi pada masa Perundagian dan diduga memiliki fungsi ritual, status, dan alat tukar.</div>
+                    <p class="soal-text">Penyebaran nekara dan moko di Nusantara menunjukkan bahwa pada masa Perundagian...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q24" value="a"> a) Masyarakat hidup terisolasi tanpa kontak satu sama lain</label>
+                        <label><input type="radio" name="q24" value="b"> b) Sudah terjadi jaringan perdagangan dan interaksi budaya yang luas di Asia Tenggara</label>
+                        <label><input type="radio" name="q24" value="c"> c) Teknologi perunggu hanya dikenal di Jawa</label>
+                        <label><input type="radio" name="q24" value="d"> d) Nekara hanya digunakan sebagai alat musik</label>
+                        <label><input type="radio" name="q24" value="e"> e) Perundagian belum mengenal sistem kepercayaan</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 25 -->
+                <div class="soal-item">
+                    <div class="narasi">Masyarakat praaksara Nusantara mengenal dua sistem kepercayaan utama: <em>animisme</em> (kepercayaan bahwa benda-benda tertentu memiliki roh atau jiwa) dan <em>dinamisme</em> (kepercayaan bahwa benda-benda tertentu memiliki kekuatan gaib). Kedua sistem ini melahirkan berbagai ritual, seperti upacara panen, penguburan, dan pemujaan leluhur.</div>
+                    <p class="soal-text">Perbedaan mendasar antara animisme dan dinamisme adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q25" value="a"> a) Animisme percaya pada roh, dinamisme percaya pada kekuatan gaib dalam benda</label>
+                        <label><input type="radio" name="q25" value="b"> b) Animisme berasal dari India, dinamisme dari Tiongkok</label>
+                        <label><input type="radio" name="q25" value="c"> c) Animisme hanya ada di Jawa, dinamisme di luar Jawa</label>
+                        <label><input type="radio" name="q25" value="d"> d) Animisme lebih modern daripada dinamisme</label>
+                        <label><input type="radio" name="q25" value="e"> e) Keduanya sama, tidak ada perbedaan</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 26 -->
+                <div class="soal-item">
+                    <div class="narasi">Perhatikan dua pernyataan: (1) "Masyarakat praaksara hidup sederhana dan tidak memiliki peradaban." (2) "Masyarakat praaksara memiliki sistem pengetahuan yang kompleks tentang alam, astronomi, pengobatan tradisional, dan teknologi pembuatan alat." Kedua pernyataan ini memberikan gambaran yang sangat berbeda tentang kehidupan masyarakat praaksara.</div>
+                    <p class="soal-text">Evaluasi paling tepat terhadap kedua pernyataan di atas adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q26" value="a"> a) Pernyataan (1) lebih akurat karena masyarakat praaksara memang primitif</label>
+                        <label><input type="radio" name="q26" value="b"> b) Pernyataan (2) lebih akurat karena masyarakat praaksara memiliki kompleksitas budaya dan pengetahuan yang tinggi</label>
+                        <label><input type="radio" name="q26" value="c"> c) Kedua pernyataan sama-sama benar</label>
+                        <label><input type="radio" name="q26" value="d"> d) Kedua pernyataan sama-sama salah</label>
+                        <label><input type="radio" name="q26" value="e"> e) Masyarakat praaksara tidak memiliki budaya sama sekali</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 27 -->
+                <div class="soal-item">
+                    <div class="narasi">Kapak persegi tersebar luas di Indonesia bagian barat (Sumatera, Jawa, Bali, Kalimantan), sementara kapak lonjong tersebar di Indonesia bagian timur (Sulawesi, Maluku, Papua). Para arkeolog menyimpulkan bahwa kedua tradisi kebudayaan ini berasal dari dua jalur migrasi yang berbeda: kapak persegi dari Asia daratan melalui jalur barat, kapak lonjong melalui jalur timur.</div>
+                    <p class="soal-text">Pola persebaran alat batu ini menunjukkan bahwa...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q27" value="a"> a) Indonesia tidak memiliki kontak dengan daratan Asia</label>
+                        <label><input type="radio" name="q27" value="b"> b) Nusantara telah menjadi wilayah pertemuan berbagai gelombang migrasi manusia prasejarah</label>
+                        <label><input type="radio" name="q27" value="c"> c) Kapak persegi dan kapak lonjong dibuat oleh spesies yang berbeda</label>
+                        <label><input type="radio" name="q27" value="d"> d) Persebaran alat batu tidak memiliki hubungan dengan migrasi</label>
+                        <label><input type="radio" name="q27" value="e"> e) Kapak lonjong lebih tua daripada kapak persegi</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 28 -->
+                <div class="soal-item">
+                    <div class="narasi">Tradisi megalitikum di Indonesia masih dapat diamati hingga masa kini. Di Pulau Nias, upacara lompat batu (<em>fahombo</em>) dan pembuatan patung batu (<em>darodaro</em>) masih dipraktikkan. Di Toraja, upacara pemakaman Rambu Solo' dengan pembuatan patung tau-tau dan kuburan batu masih dilestarikan. Di Sumba, kuburan batu dolmen masih dibuat untuk pemakaman bangsawan.</div>
+                    <p class="soal-text">Fenomena ini menunjukkan bahwa...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q28" value="a"> a) Tradisi megalitikum telah punah sepenuhnya</label>
+                        <label><input type="radio" name="q28" value="b"> b) Tradisi megalitikum merupakan warisan budaya yang terus hidup dan beradaptasi dengan konteks masa kini</label>
+                        <label><input type="radio" name="q28" value="c"> c) Tradisi megalitikum hanya ada di Nias</label>
+                        <label><input type="radio" name="q28" value="d"> d) Tradisi megalitikum tidak memiliki nilai budaya</label>
+                        <label><input type="radio" name="q28" value="e"> e) Tradisi megalitikum merupakan pengaruh dari luar Indonesia</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 29 -->
+                <div class="soal-item">
+                    <div class="narasi">Pada masa bercocok tanam, manusia mulai mengenal konsep kepemilikan tanah. Lahan yang dibuka dan ditanami dianggap sebagai milik kelompok yang mengolahnya. Konsep ini berbeda dengan masa berburu-meramu di mana tanah dianggap sebagai milik bersama yang dapat diakses siapa saja.</div>
+                    <p class="soal-text">Dampak sosial paling penting dari transisi dari food gathering ke food producing adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q29" value="a"> a) Masyarakat menjadi lebih nomaden</label>
+                        <label><input type="radio" name="q29" value="b"> b) Munculnya konsep kepemilikan, stratifikasi sosial, dan permukiman tetap</label>
+                        <label><input type="radio" name="q29" value="c"> c) Masyarakat kembali ke pola hidup sederhana</label>
+                        <label><input type="radio" name="q29" value="d"> d) Hilangnya sistem kepercayaan</label>
+                        <label><input type="radio" name="q29" value="e"> e) Berkurangnya populasi manusia</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 30 -->
+                <div class="soal-item">
+                    <div class="narasi">Di Situs Ngandong (Lembah Bengawan Solo), ditemukan alat-alat tulang dan tanduk yang sangat halus, serta fosil <em>Homo soloensis</em> dan <em>Homo wajakensis</em>. Situs ini menunjukkan bahwa pada masa Pleistosen Akhir, manusia di Jawa sudah memiliki kemampuan teknologi yang lebih maju dibandingkan masa sebelumnya.</div>
+                    <p class="soal-text">Keberadaan Situs Ngandong penting dalam studi prasejarah Indonesia karena...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q30" value="a"> a) Merupakan situs tertua di Indonesia</label>
+                        <label><input type="radio" name="q30" value="b"> b) Menunjukkan perkembangan teknologi dan evolusi manusia pada Pleistosen Akhir di Jawa</label>
+                        <label><input type="radio" name="q30" value="c"> c) Merupakan situs Kerajaan Majapahit</label>
+                        <label><input type="radio" name="q30" value="d"> d) Merupakan tempat penemuan prasasti tertua</label>
+                        <label><input type="radio" name="q30" value="e"> e) Merupakan situs Islam tertua di Jawa</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 31 -->
+                <div class="soal-item">
+                    <div class="narasi">Para arkeolog menggunakan beberapa metode untuk menentukan usia fosil dan artefak, di antaranya: (1) penanggalan radiokarbon (C-14), (2) stratigrafi (lapisan tanah), (3) tipologi (bentuk alat), dan (4) penanggalan kalium-argon untuk batuan vulkanik. Setiap metode memiliki kelebihan dan keterbatasan.</div>
+                    <p class="soal-text">Jika seorang arkeolog ingin menentukan usia fosil manusia purba yang diperkirakan berumur 1 juta tahun, metode yang paling tepat digunakan adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q31" value="a"> a) Radiokarbon (C-14), karena paling akurat untuk semua usia</label>
+                        <label><input type="radio" name="q31" value="b"> b) Kalium-argon, karena cocok untuk batuan vulkanik yang sangat tua</label>
+                        <label><input type="radio" name="q31" value="c"> c) Tipologi, karena berdasarkan bentuk alat</label>
+                        <label><input type="radio" name="q31" value="d"> d) Stratigrafi saja, tanpa metode lain</label>
+                        <label><input type="radio" name="q31" value="e"> e) Tidak ada metode yang dapat digunakan</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 32 -->
+                <div class="soal-item">
+                    <div class="narasi">Konsep "revolusi Neolitik" yang dikemukakan V. Gordon Childe menggambarkan perubahan besar dari masyarakat berburu-meramu menjadi masyarakat bercocok tanam. Namun, penelitian terbaru menunjukkan bahwa transisi ini tidak terjadi secara tiba-tiba, melainkan melalui proses panjang ribuan tahun dengan variasi di berbagai wilayah.</div>
+                    <p class="soal-text">Kritik terhadap konsep "revolusi Neolitik" dalam konteks Nusantara menunjukkan bahwa...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q32" value="a"> a) Transisi ke pertanian terjadi secara revolusioner dan serentak di seluruh Nusantara</label>
+                        <label><input type="radio" name="q32" value="b"> b) Transisi ke pertanian merupakan proses evolusioner yang beragam dan bertahap di berbagai wilayah</label>
+                        <label><input type="radio" name="q32" value="c"> c) Masyarakat Nusantara tidak pernah bercocok tanam</label>
+                        <label><input type="radio" name="q32" value="d"> d) Pertanian ditemukan di Nusantara lebih dulu daripada di tempat lain</label>
+                        <label><input type="radio" name="q32" value="e"> e) Konsep revolusi Neolitik tidak berlaku untuk Asia</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 33 -->
+                <div class="soal-item">
+                    <div class="narasi">Dalam studi prasejarah, dikenal istilah "zaman" berdasarkan teknologi (Zaman Batu, Zaman Logam) dan istilah "kala" berdasarkan geologi (Pleistosen, Holosen). Keduanya tidak selalu berimpit. Misalnya, Zaman Paleolitikum di Indonesia berlangsung dari Pleistosen Bawah hingga Pleistosen Akhir, sementara Zaman Neolitikum berlangsung pada Holosen.</div>
+                    <p class="soal-text">Hubungan antara pembagian zaman budaya dan kala geologi menunjukkan bahwa...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q33" value="a"> a) Keduanya adalah konsep yang sama dan dapat dipertukarkan</label>
+                        <label><input type="radio" name="q33" value="b"> b) Zaman budaya berdasarkan teknologi manusia, kala geologi berdasarkan proses alam; keduanya saling berkaitan tetapi berbeda</label>
+                        <label><input type="radio" name="q33" value="c"> c) Kala geologi tidak relevan untuk studi prasejarah</label>
+                        <label><input type="radio" name="q33" value="d"> d) Zaman budaya hanya berlaku untuk Eropa</label>
+                        <label><input type="radio" name="q33" value="e"> e) Kala geologi lebih penting daripada zaman budaya</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 34 -->
+                <div class="soal-item">
+                    <div class="narasi">Seorang arkeolog menemukan sebuah gua di Kalimantan yang berisi lukisan cap tangan, lukisan hewan, dan alat-alat batu. Ia juga menemukan lapisan tanah yang menunjukkan bahwa gua tersebut telah dihuni secara bergantian selama puluhan ribu tahun oleh berbagai kelompok manusia.</div>
+                    <p class="soal-text">Untuk memahami situs gua tersebut secara komprehensif, arkeolog tersebut harus...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q34" value="a"> a) Hanya fokus pada lukisan gua dan mengabaikan lapisan tanah</label>
+                        <label><input type="radio" name="q34" value="b"> b) Melakukan analisis multidisiplin: arkeologi, geologi, paleontologi, dan penanggalan absolut</label>
+                        <label><input type="radio" name="q34" value="c"> c) Hanya menggunakan metode tipologi</label>
+                        <label><input type="radio" name="q34" value="d"> d) Mengabaikan alat-alat batu karena tidak penting</label>
+                        <label><input type="radio" name="q34" value="e"> e) Menyimpulkan bahwa gua tersebut hanya dihuni satu kali</label>
+                    </div>
+                </div>
+
+                <!-- SOAL 35 -->
+                <div class="soal-item">
+                    <div class="narasi">Warisan budaya masa praaksara seperti tradisi megalitikum, pengetahuan pengobatan tradisional, sistem pertanian subsisten, dan kearifan lokal dalam mengelola alam masih dapat ditemukan di berbagai daerah Indonesia. Warisan ini bukan sekadar "sisa masa lalu", melainkan bagian dari identitas budaya yang terus hidup.</div>
+                    <p class="soal-text">Signifikansi mempelajari masa praaksara bagi kehidupan bangsa Indonesia masa kini adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q35" value="a"> a) Tidak ada signifikansi karena masa praaksara sudah terlalu lama</label>
+                        <label><input type="radio" name="q35" value="b"> b) Memberikan pemahaman tentang akar peradaban, identitas budaya, dan kearifan lokal yang relevan untuk masa kini</label>
+                        <label><input type="radio" name="q35" value="c"> c) Hanya berguna untuk kepentingan pariwisata</label>
+                        <label><input type="radio" name="q35" value="d"> d) Hanya berguna untuk akademisi asing</label>
+                        <label><input type="radio" name="q35" value="e"> e) Membuktikan bahwa Indonesia tertinggal dari bangsa lain</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- =========================================
+                 BAGIAN B: 5 SOAL ESSAY
+                 ========================================= -->
+            <div class="card">
+                <h3 style="margin-bottom: 0.5rem;">✍️ Bagian B – Essay (5 Soal)</h3>
+                <p style="color: #EF4444; font-size: 0.9rem; margin-bottom: 1.5rem; font-weight: 600;">⚠️ Jawablah dengan uraian yang sistematis, analitis, dan disertai contoh. Setiap soal bernilai 6 poin.</p>
+
+                <div class="soal-item">
+                    <p class="soal-text">Soal Essay 1 (Analisis Konsep)</p>
+                    <p style="margin-bottom: 1rem;">Seorang sejarawan meneliti peristiwa Reformasi 1998. Ia menggunakan pendekatan <strong>diakronik</strong> untuk menelusuri proses panjang dari Orde Baru hingga jatuhnya Soeharto, dan pendekatan <strong>sinkronik</strong> untuk menganalisis struktur sosial-ekonomi Indonesia pada Mei 1998 secara mendalam.</p>
+                    <p><strong>Jelaskan:</strong> Mengapa kedua pendekatan ini perlu dikombinasikan dalam penelitian sejarah yang komprehensif? Berikan analisis Anda tentang kelebihan dan keterbatasan masing-masing pendekatan!</p>
+                    <textarea name="essay1" placeholder="Tulis jawaban analisis Anda di sini..."></textarea>
+                </div>
+
+                <div class="soal-item">
+                    <p class="soal-text">Soal Essay 2 (Evaluasi Metode)</p>
+                    <p style="margin-bottom: 1rem;">Seorang peneliti menemukan sebuah naskah kuno yang diklaim sebagai "bukti" bahwa Kerajaan Majapahit memiliki hubungan diplomatik dengan Kerajaan Maya di Amerika Tengah pada abad ke-14. Klaim ini viral di media sosial namun ditolak oleh komunitas sejarawan profesional.</p>
+                    <p><strong>Jelaskan:</strong> Berdasarkan prinsip metode penelitian sejarah (heuristik, verifikasi, interpretasi, historiografi), mengapa klaim tersebut tidak dapat diterima sebagai sejarah ilmiah? Analisislah tahapan mana yang dilanggar dalam klaim tersebut!</p>
+                    <textarea name="essay2" placeholder="Tulis jawaban analisis Anda di sini..."></textarea>
+                </div>
+
+                <div class="soal-item">
+                    <p class="soal-text">Soal Essay 3 (Analisis Komparatif)</p>
+                    <p style="margin-bottom: 1rem;">Perhatikan dua temuan arkeologis berikut: (1) <em>Pithecanthropus erectus</em> di Trinil (Jawa) dengan volume otak ±900 cc dan alat batu sederhana, (2) <em>Homo floresiensis</em> di Liang Bua (Flores) dengan volume otak ±380 cc namun mampu membuat alat batu yang relatif kompleks dan berburu hewan besar.</p>
+                    <p><strong>Jelaskan:</strong> Bagaimana kedua temuan ini menantang pemahaman tradisional tentang evolusi manusia? Analisislah hubungan antara ukuran otak, kompleksitas budaya, dan adaptasi lingkungan!</p>
+                    <textarea name="essay3" placeholder="Tulis jawaban analisis Anda di sini..."></textarea>
+                </div>
+
+                <div class="soal-item">
+                    <p class="soal-text">Soal Essay 4 (Sintesis & Evaluasi)</p>
+                    <p style="margin-bottom: 1rem;">Transisi dari <em>food gathering</em> (berburu-meramu) ke <em>food producing</em> (bercocok tanam) pada masa Neolitikum sering disebut sebagai "revolusi" dalam sejarah manusia. Namun, beberapa ahli berpendapat bahwa istilah "revolusi" kurang tepat karena prosesnya berlangsung ribuan tahun.</p>
+                    <p><strong>Jelaskan:</strong> Analisislah dampak transisi ini terhadap kehidupan sosial, ekonomi, dan budaya masyarakat praaksara di Nusantara! Menurut Anda, apakah istilah "revolusi" tepat untuk menggambarkan proses ini? Berikan argumentasi Anda!</p>
+                    <textarea name="essay4" placeholder="Tulis jawaban analisis Anda di sini..."></textarea>
+                </div>
+
+                <div class="soal-item">
+                    <p class="soal-text">Soal Essay 5 (Kreasi & Relevansi)</p>
+                    <p style="margin-bottom: 1rem;">Tradisi megalitikum di Indonesia (seperti di Nias, Sumba, Toraja, dan Batak) masih hidup hingga masa kini. UNESCO telah mengakui beberapa tradisi ini sebagai Warisan Budaya Takbenda. Di sisi lain, modernisasi dan globalisasi mengancam kelangsungan tradisi ini.</p>
+                    <p><strong>Jelaskan:</strong> Analisislah tantangan dan peluang pelestarian tradisi megalitikum di era modern! Rumuskan strategi konkret yang dapat dilakukan oleh pemerintah, masyarakat lokal, dan generasi muda untuk menjaga warisan budaya ini!</p>
+                    <textarea name="essay5" placeholder="Tulis jawaban analisis Anda di sini..."></textarea>
+                </div>
+            </div>
+
+            <!-- Tombol Aksi -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary" onclick="hitungSkor()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+            </div>
+
+            <!-- Kotak Hasil -->
+            <div id="hasilBox" class="result-box">
+                <h3>📊 Hasil Ujian Tengah Semester</h3>
+                <p>Terima kasih telah menyelesaikan UTS, <span id="namaSiswaHasil" style="color: var(--gold-light); font-weight: 600;"></span>!</p>
+                
+                <div class="score-grid">
+                    <div class="score-item">
+                        <div class="value" id="skorPG">0</div>
+                        <div class="label">Skor PG (Maks. 70)</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="value" id="skorEssay">Review</div>
+                        <div class="label">Skor Essay (Maks. 30)</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="value" id="skorTotal">0</div>
+                        <div class="label">Skor Total (Maks. 100)</div>
+                    </div>
+                </div>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 1rem;">* Skor essay akan dinilai oleh guru berdasarkan kedalaman analisis, ketepatan konsep, dan kualitas argumentasi.</p>
+                
+                <div class="btn-group" style="justify-content: center;">
+                    <button type="button" class="btn btn-outline" style="border-color: var(--gold-primary); color: var(--gold-primary);" onclick="window.print()">📥 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn btn-outline" style="border-color: white; color: white;" onclick="location.reload()">🔄 MULAI ULANG</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <footer>
+        <p><strong>Sejarah Indonesia Kelas X — Ujian Tengah Semester</strong></p>
+        <p>Materi: Bab 1 (Berpikir Sejarah) & Bab 2 (Manusia Purba dan Masyarakat Praaksara)</p>
+        <p style="margin-top: 1rem;">📧 <a href="mailto:elsaevikayanti@gmail.com">elsaevikayanti@gmail.com</a></p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">© 2026 Elsa Evikayanti, S.Pd. Hak cipta dilindungi.</p>
+    </footer>
+
+    <script>
+        // Kunci Jawaban Pilihan Ganda (35 soal)
+        const kunciJawaban = {
+            q1: 'b', q2: 'b', q3: 'c', q4: 'c', q5: 'c',
+            q6: 'b', q7: 'c', q8: 'c', q9: 'b', q10: 'c',
+            q11: 'b', q12: 'c', q13: 'b', q14: 'b', q15: 'b',
+            q16: 'c', q17: 'b', q18: 'b', q19: 'b', q20: 'b',
+            q21: 'b', q22: 'c', q23: 'b', q24: 'b', q25: 'a',
+            q26: 'b', q27: 'b', q28: 'b', q29: 'b', q30: 'b',
+            q31: 'b', q32: 'b', q33: 'b', q34: 'b', q35: 'b'
+        };
+
+        function hitungSkor() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            
+            if (!nama || !nis) {
+                alert('⚠️ Harap lengkapi Nama Lengkap dan NIS terlebih dahulu!');
+                return;
+            }
+
+            // Cek apakah semua soal PG sudah dijawab
+            let belumDijawab = [];
+            for (let i = 1; i <= 35; i++) {
+                const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!jawaban) belumDijawab.push(i);
+            }
+            
+            if (belumDijawab.length > 0) {
+                if (!confirm(`⚠️ Masih ada ${belumDijawab.length} soal PG yang belum dijawab (soal: ${belumDijawab.join(', ')}). Tetap kirim?`)) {
+                    return;
+                }
+            }
+
+            let skorPG = 0;
+            for (let i = 1; i <= 35; i++) {
+                const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+                if (jawaban && jawaban.value === kunciJawaban[`q${i}`]) {
+                    skorPG += 2; // 35 soal × 2 poin = 70
+                }
+            }
+
+            document.getElementById('namaSiswaHasil').textContent = nama;
+            document.getElementById('skorPG').textContent = skorPG;
+            document.getElementById('skorTotal').textContent = skorPG + " + Review";
+            
+            const hasilBox = document.getElementById('hasilBox');
+            hasilBox.style.display = 'block';
+            hasilBox.scrollIntoView({ behavior: 'smooth' });
+            
+            alert(`✅ Jawaban berhasil disimpan!\n\nSkor Pilihan Ganda: ${skorPG}/70\nSkor Essay: Menunggu review pengajar\nTotal: ${skorPG} + Review`);
+        }
+
+        document.getElementById('tanggal').valueAsDate = new Date();
+    </script>
+</body>
+</html>

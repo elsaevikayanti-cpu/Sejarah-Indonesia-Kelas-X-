@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Indonesia KELAS X - Elsa Evikayanti, S.Pd</title>
+    <!-- Font Premium: Playfair Display (Luxury Serif) & Montserrat (Modern Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* =========================================
+           MODERN-STYLISH-LUXURY DESIGN SYSTEM
+           ========================================= */
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa8c2c;
+            --text-primary: #f5f5f5;
+            --text-secondary: #a0a0a0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--gold-primary); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at top right, #1a1a1a 0%, var(--bg-dark) 60%);
+            padding: 60px 0;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="%23d4af37" stroke-width="0.5" opacity="0.1"/></svg>');
+            opacity: 0.3;
+        }
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        .book-cover-container { position: relative; text-align: center; }
+        .book-cover {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 8px;
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2), 0 0 0 1px rgba(212, 175, 55, 0.3);
+            transition: transform 0.4s ease;
+        }
+        .book-cover:hover { transform: translateY(-10px) scale(1.02); }
+        .author-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--gold-primary);
+            margin-top: -60px;
+            position: relative;
+            z-index: 3;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background-color: #222; /* Fallback jika gambar belum ada */
+        }
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-text .subtitle { font-size: 1.5rem; color: var(--text-secondary); margin-bottom: 30px; font-weight: 300; }
+        .meta-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--gold-primary);
+            backdrop-filter: blur(10px);
+            border-radius: 0 8px 8px 0;
+        }
+        .meta-info p { font-size: 0.95rem; color: var(--text-secondary); }
+        .meta-info strong { color: var(--gold-light); }
+        .btn-primary {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 100%);
+            color: var(--bg-dark);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4); }
+
+        /* Sections General */
+        section { padding: 80px 0; }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--gold-primary);
+            margin: 15px auto 0;
+        }
+
+        /* Description & Case Studies */
+        .description-content {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .description-content p { margin-bottom: 20px; text-align: justify; }
+        .case-study {
+            background: rgba(212, 175, 55, 0.05);
+            border-left: 4px solid var(--gold-primary);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .case-study h4 { margin-bottom: 10px; color: var(--gold-light); font-size: 1.2rem; }
+
+        /* Chapters Grid */
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .chapter-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .chapter-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold-primary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .chapter-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-primary);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+        .chapter-card:hover::before { transform: scaleX(1); }
+        .chapter-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: rgba(212, 175, 55, 0.2);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .chapter-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: var(--text-primary); }
+        .chapter-card p { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px; }
+        .chapter-link {
+            color: var(--gold-primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.3s ease;
+        }
+        .chapter-link:hover { gap: 15px; }
+
+        /* Video Section */
+        .video-section { background: linear-gradient(180deg, var(--bg-dark) 0%, #0f0f0f 100%); }
+        .video-container { display: flex; flex-direction: column; gap: 20px; max-width: 800px; margin: 0 auto; }
+        .video-topic {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: border-color 0.3s ease;
+        }
+        .video-topic:hover { border-color: var(--gold-primary); }
+        .video-topic h4 { color: var(--text-primary); font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.1rem; }
+        .btn-video {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 25px;
+            background: transparent;
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-video:hover { background: var(--gold-primary); color: var(--bg-dark); }
+
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        table { width: 100%; border-collapse: collapse; color: var(--text-secondary); }
+        th, td { padding: 15px 20px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        th {
+            color: var(--gold-primary);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            background: rgba(212, 175, 55, 0.05);
+        }
+        tr:hover td { background: rgba(255,255,255,0.02); color: var(--text-primary); }
+
+        /* References */
+        .references-list { list-style: none; counter-reset: ref-counter; max-width: 900px; margin: 0 auto; }
+        .references-list li {
+            counter-increment: ref-counter;
+            margin-bottom: 15px;
+            padding-left: 40px;
+            position: relative;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .references-list li::before {
+            content: counter(ref-counter);
+            position: absolute;
+            left: 0; top: 2px;
+            width: 28px; height: 28px;
+            background: var(--gold-primary);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #050505;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .meta-info { align-items: center; }
+            .video-topic { flex-direction: column; gap: 15px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="book-cover-container">
+                <!-- ======================================================= -->
+                <!-- INSTRUKSI PENGGANTIAN GAMBAR:                           -->
+                <!-- 1. Simpan file gambar cover buku Anda dengan nama: cover-buku.png -->
+                <!-- 2. Simpan file foto penulis Anda dengan nama: photo-penulis.jpg -->
+                <!-- 3. Pastikan kedua file berada dalam satu folder dengan file HTML ini. -->
+                <!-- ======================================================= -->
+                <img src="cover-buku.png" alt="Cover Buku Sejarah Indonesia Kelas X" class="book-cover">
+                <img src="photo-penulis.jpg" alt="Elsa Evikayanti, S.Pd" class="author-photo">
+            </div>
+            <div class="hero-text">
+                <h1>Sejarah Indonesia<br>KELAS X</h1>
+                <p class="subtitle">Menelusuri Jejak Peradaban, Memahami Identitas Bangsa</p>
+                
+                <div class="meta-info">
+                    <p><strong>Penulis:</strong> Elsa Evikayanti, S.Pd</p>
+                    <p><strong>Sekolah / Institusi:</strong> Sejarah Indonesia</p>
+                    <p><strong>Email:</strong> <a href="mailto:elsaevikayanti@gmail.com" style="color: var(--gold-primary); text-decoration: none;">elsaevikayanti@gmail.com</a></p>
+                </div>
+
+                <a href="#bab" class="btn-primary">Jelajahi Isi Buku</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- JABARAN ISI BUKU (PANJANG & DETAIL) -->
+    <section id="jabaran">
+        <div class="container">
+            <h2 class="section-title">Sinopsis & Jabaran Materi</h2>
+            <div class="description-content">
+                <p>
+                    Buku <strong>"Sejarah Indonesia KELAS X"</strong> ini dirancang sebagai panduan komprehensif dan mendalam bagi peserta didik untuk memahami dinamika sejarah Nusantara sejak masa praaksara hingga perkembangan awal masyarakat modern. Disusun dengan pendekatan <em>Historical Thinking</em> (Berpikir Sejarah), buku ini tidak hanya menyajikan fakta kronologis, tetapi juga melatih kemampuan analitis, kausalitas, dan interpretasi terhadap peristiwa masa lalu.
+                </p>
+                <p>
+                    Materi disajikan secara sistematis dalam empat bagian utama. Bagian pertama meletakkan fondasi metodologis, mengajak siswa memahami konsep dasar sejarah seperti kronologi, kausalitas, perubahan, dan keberlanjutan. Bagian kedua berfungsi sebagai evaluasi komprehensif Tengah Semester untuk mengukur pemahaman konsep awal dan sejarah manusia purba. Bagian ketiga menyelami kejayaan dan dinamika politik, sosial, serta budaya pada masa Kerajaan Hindu-Buddha dan Islam, sementara bagian keempat merupakan evaluasi Akhir Semester yang menguji holistikitas pemahaman siswa terhadap seluruh rangkaian materi.
+                </p>
+
+                <div class="case-study">
+                    <h4>📌 Contoh Kasus & Analisis: Konsep Kausalitas dalam Peristiwa Rengasdengklok</h4>
+                    <p>
+                        Dalam bab awal, siswa diajak menganalisis Peristiwa Rengasdengklok (16 Agustus 1945) bukan sekadar sebagai "penculikan", melainkan sebagai puncak ketegangan kausalitas antara golongan muda yang menginginkan proklamasi segera terlepas dari pengaruh Jepang, dan golongan tua yang mempertimbangkan prosedur dan risiko pertumpahan darah. Melalui studi kasus ini, siswa belajar memetakan <strong>sebab langsung</strong> (kalahnya Jepang dari Sekutu) dan <strong>sebab mendasar</strong> (kesadaran nasionalisme yang telah tumbuh sejak Sumpah Pemuda 1928), sehingga sejarah dipahami sebagai rangkaian sebab-akibat yang logis, bukan kejadian acak.
+                    </p>
+                </div>
+
+                <div class="case-study">
+                    <h4>📌 Contoh Kasus & Analisis: Akulturasi Arsitektur pada Masjid Agung Demak</h4>
+                    <p>
+                        Pada pembahasan kerajaan Islam, buku ini menyajikan studi kasus mendalam mengenai Masjid Agung Demak. Siswa diajak mengamati bagaimana atap tumpang (meru) yang merupakan ciri khas arsitektur Hindu-Buddha diadaptasi menjadi simbolisasi tingkatan iman dalam Islam. Analisis ini dilengkapi dengan bukti artefaktual (soko tatal dan soko guru) untuk membuktikan bahwa penyebaran Islam di Nusantara berlangsung secara damai melalui akulturasi budaya, bukan pemaksaan yang menghapus identitas lokal sebelumnya.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DAFTAR BAB -->
+    <section id="bab" style="background-color: #0e0e0e;">
+        <div class="container">
+            <h2 class="section-title">Struktur Bab & Evaluasi</h2>
+            <div class="chapters-grid">
+                <!-- BAB 1 -->
+                <div class="chapter-card">
+                    <span class="chapter-number">01</span>
+                    <h3>Berpikir Sejarah & Peradaban Awal</h3>
+                    <p>Memahami konsep dasar ilmu sejarah (kronologi, kausalitas, perubahan, keberlanjutan) serta menelusuri kehidupan manusia purba dan masyarakat awal di Kepulauan Indonesia.</p>
+                    <!-- Tautan Bab 1 -->
+                    <a href="1.html" target="_blank" class="chapter-link">Baca Bab 1 &rarr;</a>
+                </div>
+
+                <!-- BAB 2 (UTS) -->
+                <div class="chapter-card">
+                    <span class="chapter-number">02</span>
+                    <h3>Ujian Tengah Semester</h3>
+                    <p>Evaluasi komprehensif dan refleksi pembelajaran Bab 1. Berisi soal-soal analitis, studi kasus, dan rubrik penilaian untuk mengukur pemahaman konsep berpikir sejarah dan masa praaksara.</p>
+                    <!-- Tautan Bab 2 -->
+                    <a href="2.html" target="_blank" class="chapter-link">Mulai UTS &rarr;</a>
+                </div>
+
+                <!-- BAB 3 -->
+                <div class="chapter-card">
+                    <span class="chapter-number">03</span>
+                    <h3>Dinamika Kerajaan Hindu-Buddha & Islam</h3>
+                    <p>Analisis mendalam tentang sistem pemerintahan, kehidupan sosial-ekonomi, dan warisan budaya dari masa Kerajaan Kutai, Majapahit, hingga Kesultanan Demak dan Mataram Islam.</p>
+                    <!-- Tautan Bab 3 -->
+                    <a href="3.html" target="_blank" class="chapter-link">Baca Bab 3 &rarr;</a>
+                </div>
+
+                <!-- BAB 4 (UAS) -->
+                <div class="chapter-card">
+                    <span class="chapter-number">04</span>
+                    <h3>Ujian Akhir Semester</h3>
+                    <p>Evaluasi holistik akhir tahun ajaran. Mencakup penilaian sumatif atas seluruh materi semester 1 dan 2, termasuk kemampuan siswa dalam menyusun tulisan sejarah sederhana.</p>
+                    <!-- Tautan Bab 4 -->
+                    <a href="4.html" target="_blank" class="chapter-link">Mulai UAS &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOPIK PENTING & VIDEO PEMBELAJARAN -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title">Topik Penting & Video Pembelajaran</h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Setiap topik krusial dilengkapi dengan materi visual interaktif. Klik tombol di bawah untuk menonton penjelasan mendalam.
+            </p>
+            
+            <div class="video-container">
+                <!-- VIDEO 1 -->
+                <div class="video-topic">
+                    <h4>🎬 Konsep 5W+1H dalam Menganalisis Sumber Sejarah</h4>
+                    <!-- ======================================================= -->
+                    <!-- INSTRUKSI: Ganti href="..." di bawah ini dengan link video Anda -->
+                    <!-- Contoh: href="https://youtube.com/watch?v=xxxxx" -->
+                    <!-- ======================================================= -->
+                    <a href="https://youtube.com/link-video-anda-1" target="_blank" class="btn-video">
+                        <span>▶</span> Tonton Video
+                    </a>
+                </div>
+
+                <!-- VIDEO 2 -->
+                <div class="video-topic">
+                    <h4>🎬 Jejak Manusia Purba di Situs Sangiran dan Trinil</h4>
+                    <!-- ======================================================= -->
+                    <!-- INSTRUKSI: Ganti href="..." di bawah ini dengan link video Anda -->
+                    <!-- ======================================================= -->
+                    <a href="https://youtube.com/link-video-anda-2" target="_blank" class="btn-video">
+                        <span>▶</span> Tonton Video
+                    </a>
+                </div>
+
+                <!-- VIDEO 3 -->
+                <div class="video-topic">
+                    <h4>🎬 Perbandingan Sistem Birokrasi: Majapahit vs Demak</h4>
+                    <!-- ======================================================= -->
+                    <!-- INSTRUKSI: Ganti href="..." di bawah ini dengan link video Anda -->
+                    <!-- ======================================================= -->
+                    <a href="https://youtube.com/link-video-anda-3" target="_blank" class="btn-video">
+                        <span>▶</span> Tonton Video
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANALISIS TABEL PERBANDINGAN -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Analisis Perbandingan</h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 30px;">
+                Tabel analisis komparatif untuk memudahkan pemahaman perbedaan mendasar antara dua peradaban besar di Nusantara.
+            </p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspek Analisis</th>
+                            <th>Kerajaan Hindu-Buddha</th>
+                            <th>Kerajaan Islam</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Pusat Kekuasaan</strong></td>
+                            <td>Cenderung di pedalaman (berbasis agraris/pertanian)</td>
+                            <td>Cenderung di wilayah pesisir (berbasis maritim/perdagangan)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sistem Pemerintahan</strong></td>
+                            <td>Monarki absolut dengan konsep "Dewa-Raja" (Raja dianggap titisan dewa)</td>
+                            <td>Monarki dengan konsep "Sultan" (Raja sebagai pemimpin politik dan pelindung agama, namun tetap manusia biasa)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Arsitektur Bangunan</strong></td>
+                            <td>Candi (berbahan batu andesit/bata), stupa, patung dewa-dewi</td>
+                            <td>Masjid (atap tumpang/meru, serambi, tanpa menara tinggi pada masa awal, makam cungkup)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sumber Sejarah Utama</strong></td>
+                            <td>Prasasti, Candi, Relief, Berita Asing (Tiongkok, India)</td>
+                            <td>Babad, Hikayat, Suluk, Catatan Perjalanan (Tomé Pires, Ma Huan), Nisan Makam</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sistem Ekonomi</strong></td>
+                            <td>Pajak hasil bumi (agraris) dan upeti dari daerah taklukan</td>
+                            <td>Cukai pelabuhan, perdagangan rempah-rempah antar-pulau dan internasional</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- REFERENSI BUKU -->
+    <section style="background-color: #0e0e0e;">
+        <div class="container">
+            <h2 class="section-title">Daftar Referensi</h2>
+            <ul class="references-list">
+                <li>
+                    Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. (2022). <em>Sejarah Indonesia untuk SMA/MA/SMK/MAK Kelas X</em>. Jakarta: Pusat Perbukuan, Kemendikbudristek. (Buku Teks Resmi Kurikulum Merdeka).
+                </li>
+                <li>
+                    Ricklefs, M. C. (2008). <em>Sejarah Indonesia Modern 1200–2008</em> (Edisi ke-3). Jakarta: Serambi Ilmu Semesta. (Referensi akademis standar internasional untuk sejarah Nusantara).
+                </li>
+                <li>
+                    Poesponegoro, M. D., & Notosusanto, N. (Eds.). (2019). <em>Sejarah Nasional Indonesia Jilid II: Zaman Kuno</em> & <em>Jilid III: Zaman Pertumbuhan dan Perkembangan Kerajaan-Kerajaan Islam di Indonesia</em>. Jakarta: Balai Pustaka. (Cetakan ulang terbaru dari karya monumental sejarah Indonesia).
+                </li>
+                <li>
+                    Habib, L. (2020). <em>Metodologi Sejarah: Teori dan Metode Penelitian Sejarah</em>. Yogyakarta: Ombak. (Pendukung materi Bab 1 mengenai cara berpikir dan metode penelitian sejarah).
+                </li>
+                <li>
+                    Lombard, D. (2005). <em>Nusa Jawa: Silang Budaya (Jilid 1-3)</em>. Jakarta: Gramedia Pustaka Utama. (Referensi pengayaan untuk analisis akulturasi budaya dan perdagangan).
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 <strong>Elsa Evikayanti, S.Pd</strong>. Hak Cipta Dilindungi.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">Diterbitkan untuk keperluan akademik Sekolah Sejarah Indonesia.</p>
+            <p style="margin-top: 5px;">
+                <a href="mailto:elsaevikayanti@gmail.com" style="color: var(--gold-primary); text-decoration: none;">elsaevikayanti@gmail.com</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

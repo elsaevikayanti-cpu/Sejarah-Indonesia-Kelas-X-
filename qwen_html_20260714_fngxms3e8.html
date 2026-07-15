@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Indonesia KELAS X | Elsa Evikayanti, S.Pd.</title>
+    
+    <!-- Google Fonts untuk nuansa Luxury & Modern -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           VARIABEL WARNA & TEMA (MODERN LUXURY)
+           ========================================= */
+        :root {
+            --gold-primary: #D4AF37;
+            --gold-light: #F2D06B;
+            --dark-navy: #0F172A;
+            --dark-charcoal: #1E293B;
+            --cream-bg: #F9F9F7;
+            --text-dark: #334155;
+            --text-light: #F9F9F7;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --shadow-luxury: 0 20px 40px rgba(15, 23, 42, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream-bg);
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-navy);
+        }
+
+        a {
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--dark-navy) 0%, #1a2744 100%);
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            color: var(--gold-primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-meta {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--gold-primary);
+        }
+
+        .hero-meta p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .hero-meta strong {
+            color: var(--gold-light);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
+            color: var(--dark-navy);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+            margin-top: 1rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* PANDUAN: Ganti 'cover-buku.png' dengan file gambar cover Anda */
+        .hero-image img {
+            max-width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.03) rotateY(-5deg);
+        }
+
+        /* =========================================
+           AUTHOR SECTION
+           ========================================= */
+        .author-section {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .author-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            background: var(--cream-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-luxury);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* PANDUAN: Ganti 'photo-penulis.jpg' dengan file foto Anda */
+        .author-photo img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--gold-primary);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .author-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .author-info .email {
+            color: var(--gold-primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* =========================================
+           CONTENT / BAB SECTION
+           ========================================= */
+        .content-section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--gold-primary);
+            margin: 1rem auto 0;
+        }
+
+        .bab-card {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-luxury);
+            border-left: 5px solid var(--gold-primary);
+            transition: transform 0.3s ease;
+        }
+
+        .bab-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .bab-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .bab-title {
+            font-size: 1.8rem;
+            color: var(--dark-navy);
+        }
+
+        .bab-badge {
+            background: var(--dark-navy);
+            color: var(--gold-primary);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .bab-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .case-study {
+            background: #F0F4F8;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--dark-navy);
+        }
+
+        .case-study h4 {
+            margin-bottom: 0.5rem;
+            color: var(--dark-charcoal);
+        }
+
+        /* =========================================
+           TABEL PERBANDINGAN (ANALISIS)
+           ========================================= */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: var(--dark-navy);
+            color: var(--gold-primary);
+            padding: 1rem;
+            text-align: left;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #E2E8F0;
+            background: white;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* =========================================
+           TOMBOL VIDEO (MUDAH DIGANTI)
+           ========================================= */
+        .video-container {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed #CBD5E1;
+        }
+
+        /* PANDUAN: Ganti href="..." dengan link video YouTube/Drive Anda */
+        .btn-video {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: #EF4444; /* Warna khas YouTube/Video */
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-video:hover {
+            background: #DC2626;
+            transform: scale(1.02);
+        }
+
+        .btn-video svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        /* =========================================
+           REFERENSI SECTION
+           ========================================= */
+        .references-section {
+            background: var(--dark-navy);
+            color: var(--text-light);
+            padding: 6rem 2rem;
+        }
+
+        .references-section .section-title {
+            color: var(--gold-primary);
+        }
+
+        .ref-list {
+            max-width: 900px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .ref-list li {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.05rem;
+            opacity: 0.9;
+        }
+
+        .ref-list li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--gold-primary);
+            font-size: 1.2rem;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background: #0B1120;
+            color: #94A3B8;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-meta {
+                border-left: none;
+                padding-left: 0;
+                border-top: 3px solid var(--gold-primary);
+                padding-top: 1rem;
+            }
+            .author-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            .bab-header {
+                flex-direction: column;
+            }
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- =========================================
+         HERO SECTION
+         ========================================= -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Sejarah Indonesia<br>KELAS X</h1>
+                <p class="subtitle">Menelusuri Jejak Peradaban, Memahami Identitas Bangsa</p>
+                
+                <div class="hero-meta">
+                    <p><strong>Penulis:</strong> Elsa Evikayanti, S.Pd.</p>
+                    <p><strong>Bidang Studi / Sekolah:</strong> Sejarah Indonesia</p>
+                    <p><strong>Email:</strong> <a href="mailto:elsaevikayanti@gmail.com" style="color: var(--gold-light);">elsaevikayanti@gmail.com</a></p>
+                </div>
+
+                <a href="#daftar-isi" class="btn-primary">Jelajahi Isi Buku</a>
+            </div>
+            
+            <div class="hero-image">
+                <!-- PANDUAN PENGGANTIAN GAMBAR 1: 
+                     Ganti 'cover-buku.png' dengan nama file gambar cover buku Anda. 
+                     Pastikan file berada di folder yang sama dengan file HTML ini. -->
+                <img src="cover-buku.png" alt="Cover Buku Sejarah Indonesia Kelas X" onerror="this.src='https://placehold.co/350x500/0F172A/D4AF37?text=Cover+Buku+Sejarah\nKelas+X';">
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         AUTHOR SECTION
+         ========================================= -->
+    <section class="author-section">
+        <div class="author-container">
+            <div class="author-photo">
+                <!-- PANDUAN PENGGANTIAN GAMBAR 2: 
+                     Ganti 'photo-penulis.jpg' dengan nama file foto penulis Anda. -->
+                <img src="photo-penulis.jpg" alt="Elsa Evikayanti, S.Pd." onerror="this.src='https://placehold.co/200x200/D4AF37/0F172A?text=Foto+Penulis';">
+            </div>
+            <div class="author-info">
+                <h2>Tentang Penulis</h2>
+                <span class="email">elsaevikayanti@gmail.com</span>
+                <p>Buku ini disusun sebagai panduan komprehensif bagi peserta didik Kelas X dalam memahami dinamika sejarah Indonesia. Dengan pendekatan <em>historical thinking</em> (berpikir sejarah), materi disajikan tidak hanya sebagai hafalan kronologis, melainkan sebagai analisis kritis terhadap peristiwa, sebab-akibat, dan relevansinya dengan kondisi bangsa masa kini. Didukung oleh referensi terkini dan studi kasus yang mendalam, buku ini bertujuan membentuk generasi yang mencintai dan memahami akar peradabannya.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         CONTENT / BAB SECTION
+         ========================================= -->
+    <section id="daftar-isi" class="content-section">
+        <h2 class="section-title">Jabaran Isi Buku</h2>
+
+        <!-- BAB 1 -->
+        <article class="bab-card">
+            <div class="bab-header">
+                <h3 class="bab-title">Bab 1: Berpikir Sejarah: Menelusuri Jejak Peradaban Awal</h3>
+                <a href="1.html" target="_blank" class="btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Baca Bab 1 →</a>
+            </div>
+            <div class="bab-content">
+                <p>Bab ini menjadi fondasi epistemologis dalam mempelajari sejarah. Peserta didik diajak untuk memahami bahwa sejarah adalah ilmu yang memiliki metode, bukan sekadar dongeng. Materi mencakup konsep dasar sejarah (diakronik, sinkronik), langkah-langkah penelitian sejarah (heuristik, verifikasi, interpretasi, historiografi), serta pentingnya kegunaan sejarah dalam kehidupan.</p>
+                
+                <div class="case-study">
+                    <h4>📚 Contoh & Kasus:</h4>
+                    <p><strong>Kasus Proklamasi 1945:</strong> Analisis perbandingan narasi peristiwa Rengasdengklok dalam arsip kolonial Belanda (yang cenderung meremehkan) dibandingkan dengan catatan harian para tokoh nasionalis (seperti Soekarno dan Chaerul Saleh). Studi kasus ini mengajarkan siswa tentang subjektivitas sumber dan pentingnya kritik sumber eksternal maupun internal.</p>
+                </div>
+
+                <div class="video-container">
+                    <!-- PANDUAN VIDEO 1: Ganti link 'https://www.youtube.com/watch?v=CONTOH_ID_1' dengan link video Anda -->
+                    <a href="https://www.youtube.com/watch?v=CONTOH_ID_1" target="_blank" class="btn-video">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        Tonton Video: Konsep Berpikir Sejarah
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- BAB 2 (UTS) -->
+        <article class="bab-card">
+            <div class="bab-header">
+                <h3 class="bab-title">Bab 2: Manusia Purba dan Dinamika Masyarakat Praaksara</h3>
+                <span class="bab-badge">Ujian Tengah Semester (UTS)</span>
+                <a href="2.html" target="_blank" class="btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Baca Bab 2 →</a>
+            </div>
+            <div class="bab-content">
+                <p>Pembahasan mendalam tentang evolusi manusia di kepulauan Indonesia, mulai dari masa Paleolitikum, Mesolitikum, hingga Megalitikum. Bab ini menyoroti kekayaan fosil hominid di Indonesia yang diakui dunia, serta transisi cara hidup dari <em>food gathering</em> (berburu-meramu) menuju <em>food producing</em> (bercocok tanam) yang menjadi cikal bakal peradaban desa.</p>
+                
+                <div class="case-study">
+                    <h4>📚 Contoh & Kasus:</h4>
+                    <p><strong>Penemuan <em>Homo floresiensis</em> ("Hobbit") di Liang Bua, Flores:</strong> Kasus ini mengguncang dunia arkeologi global pada tahun 2003. Penemuan ini membuktikan bahwa Indonesia memiliki jalur evolusi manusia yang unik dan berbeda dengan narasi evolusi yang berpusat di Afrika atau Eropa semata.</p>
+                </div>
+
+                <h4>📊 Analisis Tabel Perbandingan: Manusia Purba</h4>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek Perbandingan</th>
+                            <th>Manusia Purba di Indonesia (Contoh: <em>Pithecanthropus erectus</em>)</th>
+                            <th>Manusia Purba di Dunia (Contoh: <em>Homo neanderthalensis</em>)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Lokasi Penemuan</strong></td>
+                            <td>Lembah Sungai Bengawan Solo (Trinil, Sangiran)</td>
+                            <td>Eropa (Neander Valley, Jerman) & Asia Barat</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ciri Fisik</strong></td>
+                            <td>Volume otak 900 cc, tonjolan kening tebal, berjalan tegak</td>
+                            <td>Volume otak lebih besar (1400 cc), tubuh kekar, adaptasi dingin</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Budaya & Alat</strong></td>
+                            <td>Kapak genggam, alat serpih, belum mengenal api secara kompleks</td>
+                            <td>Alat batu Mousterian, sudah menguasai penggunaan api, penguburan mayat</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="video-container">
+                    <!-- PANDUAN VIDEO 2: Ganti link di bawah ini -->
+                    <a href="https://www.youtube.com/watch?v=CONTOH_ID_2" target="_blank" class="btn-video">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        Tonton Video: Kehidupan Masa Praaksara & Situs Sangiran
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- BAB 3 -->
+        <article class="bab-card">
+            <div class="bab-header">
+                <h3 class="bab-title">Bab 3: Kejayaan Nusantara: Kerajaan Hindu-Buddha di Indonesia</h3>
+                <a href="3.html" target="_blank" class="btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Baca Bab 3 →</a>
+            </div>
+            <div class="bab-content">
+                <p>Bab ini menguraikan proses masuknya pengaruh India, teori-teori pendukung (Brahmana, Ksatria, Waisya, Arus Balik), serta perkembangan kerajaan-kerajaan besar seperti Kutai, Tarumanegara, Mataram Kuno, Sriwijaya, hingga Majapahit. Fokus diberikan pada sistem pemerintahan, kehidupan sosial-ekonomi, dan peninggalan budaya yang masih relevan hingga kini.</p>
+                
+                <div class="case-study">
+                    <h4>📚 Contoh & Kasus:</h4>
+                    <p><strong>Prasasti Yupa (Kutai) vs Candi Borobudur (Mataram Kuno):</strong> Analisis perbandingan sumber sejarah. Prasasti Yupa menunjukkan awal pengaruh Hindu melalui ritual kurban, sementara relief Borobudur memberikan gambaran visual detail tentang kehidupan sosial-ekonomi masyarakat agraris Jawa abad ke-8 (termasuk alat musik, pakaian, dan arsitektur rumah).</p>
+                </div>
+
+                <h4>📊 Analisis Tabel Perbandingan: Corak Kerajaan</h4>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek Perbandingan</th>
+                            <th>Kerajaan Agraris (Contoh: Mataram Kuno)</th>
+                            <th>Kerajaan Maritim (Contoh: Sriwijaya)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Basis Ekonomi</strong></td>
+                            <td>Pertanian (sawah), pajak hasil bumi, sistem feodal tanah</td>
+                            <td>Perdagangan internasional, penguasaan selat (Malaka), bea cukai</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lokasi Pusat</strong></td>
+                            <td>Pedalaman pulau (daerah subur seperti Lembah Kedu & Bogowonto)</td>
+                            <td>Pesisir pantai, dekat jalur pelayaran strategis (Palembang)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Peninggalan Dominan</strong></td>
+                            <td>Candi (Borobudur, Prambanan) sebagai pusat ritual & makam raja</td>
+                            <td>Sedikit candi, lebih banyak prasasti (Kedukan Bukit, Talang Tuo)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="video-container">
+                    <!-- PANDUAN VIDEO 3: Ganti link di bawah ini -->
+                    <a href="https://www.youtube.com/watch?v=CONTOH_ID_3" target="_blank" class="btn-video">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        Tonton Video: Kejayaan Kerajaan Hindu-Buddha
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- BAB 4 (UAS) -->
+        <article class="bab-card">
+            <div class="bab-header">
+                <h3 class="bab-title">Bab 4: Transformasi Peradaban: Kerajaan-Kerajaan Islam di Indonesia</h3>
+                <span class="bab-badge">Ujian Akhir Semester (UAS)</span>
+                <a href="4.html" target="_blank" class="btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Baca Bab 4 →</a>
+            </div>
+            <div class="bab-content">
+                <p>Membahas proses masuk dan berkembangnya Islam di Nusantara melalui jalur perdagangan, perkawinan, tasawuf, dan pendidikan. Bab ini mencakup analisis terhadap kerajaan-kerajaan Islam di Sumatera (Samudera Pasai, Aceh), Jawa (Demak, Pajang, Mataram Islam, Banten), hingga Sulawesi (Gowa-Tallo). Ditekankan pula pada proses akulturasi budaya yang damai dan inklusif.</p>
+                
+                <div class="case-study">
+                    <h4>📚 Contoh & Kasus:</h4>
+                    <p><strong>Peran Wali Songo di Jawa:</strong> Studi kasus tentang strategi dakwah kultural. Sunan Kalijaga menggunakan wayang dan gamelan sebagai media penyebaran nilai Islam, menunjukkan bahwa Islamisasi di Indonesia tidak melalui penaklukan militer, melainkan adaptasi dan pengayaan budaya lokal (akulturasi).</p>
+                </div>
+
+                <h4>📊 Analisis Tabel Perbandingan: Corak Kerajaan Islam</h4>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek Perbandingan</th>
+                            <th>Kerajaan Islam Pesisir (Contoh: Samudera Pasai, Demak)</th>
+                            <th>Kerajaan Islam Pedalaman (Contoh: Mataram Islam)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Orientasi Ekonomi</strong></td>
+                            <td>Perdagangan laut, ekspor lada/rempah, hubungan dengan pedagang asing (Tiongkok, Gujarat)</td>
+                            <td>Pertanian agraris, kontrol atas wilayah pedalaman yang subur</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sistem Pemerintahan</strong></td>
+                            <td>Sultan sebagai pemimpin politik & agama, peran syahbandar sangat kuat</td>
+                            <td>Raja (Sultan) dianggap memiliki unsur keilahian (konsep "Ratu Adil"), birokrasi feodal kuat</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Arsitektur</strong></td>
+                            <td>Masjid beratap tumpang (Meru), tanpa menara, pintu gerbang terbelah (candi bentar)</td>
+                            <td>Kraton sebagai pusat kosmos, kombinasi unsur Jawa-Hindu-Islam yang kental</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="video-container">
+                    <!-- PANDUAN VIDEO 4: Ganti link di bawah ini -->
+                    <a href="https://www.youtube.com/watch?v=CONTOH_ID_4" target="_blank" class="btn-video">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        Tonton Video: Perkembangan Kerajaan Islam di Nusantara
+                    </a>
+                </div>
+            </div>
+        </article>
+
+    </section>
+
+    <!-- =========================================
+         REFERENCES SECTION
+         ========================================= -->
+    <section class="references-section">
+        <h2 class="section-title">Daftar Pustaka & Referensi Terbaru</h2>
+        <ul class="ref-list">
+            <li>Kemendikbud Ristek. (2024). <em>Modul Ajar Sejarah Indonesia Fase E (Kelas X) Kurikulum Merdeka</em>. Jakarta: Badan Standar, Kurikulum, dan Asesmen Pendidikan (BSKAP).</li>
+            <li>Gunawan, R., Lestariningsih, A. D., & Sardiman. (2021). <em>Sejarah Indonesia Kelas X SMA/MA/SMK/MAK</em>. Jakarta: Pusat Kurikulum dan Perbukuan, Kemendikbud Ristek.</li>
+            <li>Ricklefs, M. C. (2022). <em>Sejarah Indonesia Modern 1200–2018</em> (Edisi Keempat). Yogyakarta: Gadjah Mada University Press. (Referensi standar akademis global untuk sejarah Nusantara).</li>
+            <li>Lapian, A. B., & Djuliati, S. (2023). <em>Sejarah Bahari Nusantara: Perspektif Maritim dalam Sejarah Indonesia</em>. Jakarta: Yayasan Pustaka Obor Indonesia.</li>
+            <li>Supriyadi, D. (2025). <em>Metodologi Penelitian Sejarah: Teori dan Praktik untuk Pelajar</em>. Bandung: Remaja Rosdakarya. (Panduan praktis metode sejarah terkini).</li>
+        </ul>
+    </section>
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+    <footer>
+        <p>&copy; 2026 Elsa Evikayanti, S.Pd. Seluruh hak cipta dilindungi.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Didesain dengan gaya Modern-Stylish-Luxury untuk Pendidikan Sejarah Indonesia yang Berkualitas.</p>
+    </footer>
+
+    <!-- Script sederhana untuk smooth scroll -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

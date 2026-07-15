@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uji Formatif Bab 3 - Kerajaan Hindu-Buddha | Sejarah Indonesia Kelas X</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold-primary: #D4AF37; --gold-light: #F2D06B; --dark-navy: #0F172A;
+            --dark-charcoal: #1E293B; --cream-bg: #F9F9F7; --text-dark: #334155;
+            --text-light: #F9F9F7; --shadow-luxury: 0 20px 40px rgba(15, 23, 42, 0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--cream-bg); color: var(--text-dark); line-height: 1.8; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--dark-navy); }
+        a { text-decoration: none; color: var(--gold-primary); transition: all 0.3s ease; }
+        a:hover { color: var(--dark-navy); }
+
+        .top-nav { background: var(--dark-navy); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--gold-primary); }
+        .top-nav a { color: var(--text-light); font-size: 0.95rem; margin-left: 1.5rem; font-weight: 500; }
+        .top-nav a:hover { color: var(--gold-primary); }
+        .brand { color: var(--gold-primary) !important; font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; margin-left: 0 !important; }
+
+        .container { max-width: 900px; margin: 3rem auto; padding: 0 1.5rem; }
+        .card { background: white; border-radius: 16px; padding: 2.5rem; margin-bottom: 2rem; box-shadow: var(--shadow-luxury); border-top: 4px solid var(--gold-primary); }
+        .card-header { text-align: center; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px dashed #CBD5E1; }
+        .card-header h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .badge { display: inline-block; background: var(--dark-navy); color: var(--gold-primary); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-top: 1rem; }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--dark-charcoal); }
+        .form-group input, .form-group select { width: 100%; padding: 0.8rem 1rem; border: 1px solid #CBD5E1; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 1rem; transition: border-color 0.3s; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--gold-primary); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1); }
+
+        .soal-item { margin-bottom: 2rem; padding: 1.5rem; background: #F8FAFC; border-radius: 10px; border-left: 4px solid var(--dark-navy); }
+        .soal-item p { font-weight: 600; margin-bottom: 1rem; font-size: 1.05rem; }
+        .options label { display: block; padding: 0.6rem 0; cursor: pointer; transition: color 0.2s; }
+        .options label:hover { color: var(--gold-primary); }
+        .options input[type="radio"] { margin-right: 0.8rem; accent-color: var(--gold-primary); }
+        textarea { width: 100%; padding: 1rem; border: 1px solid #CBD5E1; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 1rem; resize: vertical; min-height: 120px; }
+        textarea:focus { outline: none; border-color: var(--gold-primary); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1); }
+
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.9rem 1.8rem; border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer; border: none; transition: all 0.3s ease; text-align: center; }
+        .btn-primary { background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%); color: var(--dark-navy); width: 100%; margin-top: 1rem; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-outline { background: transparent; border: 2px solid var(--dark-navy); color: var(--dark-navy); margin-top: 1rem; }
+        .btn-outline:hover { background: var(--dark-navy); color: var(--gold-primary); }
+        .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+
+        .result-box { display: none; background: var(--dark-navy); color: var(--text-light); padding: 2rem; border-radius: 12px; text-align: center; margin-top: 2rem; }
+        .result-box h3 { color: var(--gold-primary); font-size: 1.8rem; margin-bottom: 1rem; }
+        .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .score-item { background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.3); }
+        .score-item .value { font-size: 2rem; font-weight: 700; color: var(--gold-primary); font-family: 'Playfair Display', serif; }
+        .score-item .label { font-size: 0.9rem; opacity: 0.8; }
+
+        footer { background: var(--dark-navy); color: #94A3B8; text-align: center; padding: 2.5rem 1rem; margin-top: 4rem; border-top: 3px solid var(--gold-primary); }
+        footer p { margin-bottom: 0.5rem; }
+        footer a { color: var(--gold-primary); }
+
+        @media (max-width: 768px) {
+            .top-nav { flex-direction: column; gap: 1rem; text-align: center; }
+            .top-nav a { margin: 0 0.5rem; }
+            .card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <a href="index.html" class="brand">Sejarah Indonesia Kelas X</a>
+        <div>
+            <a href="index.html">Beranda</a>
+            <a href="3.html">Materi Bab 3</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form id="ujiFormatifForm">
+            <div class="card">
+                <div class="card-header">
+                    <h2>📋 Uji Formatif Bab 3</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-dark);">Kejayaan Nusantara: Kerajaan Hindu-Buddha di Indonesia</p>
+                    <span class="badge">Materi: Teori masuknya Hindu-Buddha, Kerajaan Kutai, Tarumanegara, Mataram Kuno, Sriwijaya, Majapahit, dan Akulturasi Budaya</span>
+                    <p style="margin-top: 1rem; font-size: 0.95rem; color: #64748B;">
+                        ⏱️ Waktu: Tidak terbatas | 💯 Total Skor: 200 poin (Pilihan Ganda: 100, Essay: 100)
+                    </p>
+                </div>
+
+                <!-- Data Siswa (Tanpa Fakultas, Jurusan, Prodi, Semester, NIM) -->
+                <h3 style="margin-bottom: 1.5rem; border-bottom: 2px solid var(--gold-primary); display: inline-block; padding-bottom: 0.3rem;">📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap siswa">
+                    </div>
+                    <div class="form-group">
+                        <label for="nis">NIS *</label>
+                        <input type="text" id="nis" name="nis" required placeholder="Masukkan Nomor Induk Siswa">
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">📅 Tanggal Ujian</label>
+                        <input type="date" id="tanggal" name="tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kelas">Kelas</label>
+                        <select id="kelas" name="kelas" required>
+                            <option value="">Pilih Kelas</option>
+                            <option value="X-1">X-1</option>
+                            <option value="X-2">X-2</option>
+                            <option value="X-3">X-3</option>
+                            <option value="X-4">X-4</option>
+                            <option value="X-5">X-5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian A: Pilihan Ganda -->
+            <div class="card">
+                <h3 style="margin-bottom: 0.5rem;">📋 Bagian A – Pilihan Ganda</h3>
+                <p style="color: #EF4444; font-size: 0.9rem; margin-bottom: 1.5rem; font-weight: 600;">⚠️ Lengkapi semua 10 soal pilihan ganda! Setiap soal bernilai 10 poin.</p>
+
+                <div class="soal-item">
+                    <p>Soal 1: Teori yang menyatakan bahwa agama Hindu-Buddha dibawa ke Nusantara oleh kaum pendeta yang diundang oleh kepala suku lokal untuk menobatkan raja disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="a"> a) Teori Ksatria</label>
+                        <label><input type="radio" name="q1" value="b"> b) Teori Waisya</label>
+                        <label><input type="radio" name="q1" value="c"> c) Teori Brahmana</label>
+                        <label><input type="radio" name="q1" value="d"> d) Teori Arus Balik</label>
+                    </div>
+                </div>
+
+                <div class="soal-item">
+                    <p>Soal 2: Kerajaan Hindu tertua di Indonesia yang terletak di tepi Sungai Mahakam, Kalimantan Timur, adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="a"> a) Tarumanegara</label>
+                        <label><input type="radio" name="q2" value="b"> b) Kutai</label>
+                        <label><input type="radio" name="q2" value="c"> c) Mataram Kuno</label>
+                        <label><input type="radio" name="q2" value="d"> d) Sriwijaya</label>
+                    </div>
+                </div>
+
+                <div class="soal-item">
+                    <p>Soal 3: Prasasti Yupa yang menjadi bukti tertua masuknya Hindu ke Nusantara menggunakan bahasa dan huruf...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="a"> a) Jawa Kuno dan Hanacaraka</label>
+                        <label><input type="radio" name="q3" value="b"> b) Sanskerta dan Pallawa</label>
+                        <label><input type="radio" name="q3" value="c"> c) Melayu Kuno dan Rencong</label>
+                        <label><input type="radio" name="q3" value="d"> d) Pali dan Brahmi</label>
+                    </div>
+                </div>
+
+                <div class="soal-item">
+                    <p>Soal 4: Kerajaan maritim terbesar di Nusantara yang berpusat di Palembang dan menjadi pusat pembelajaran agama Buddha internasional adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="a"> a) Majapahit</label>
+                        <label><input type="radio" name="q4" value="b"> b) Mataram Kuno</label>
+                        <label><input type="radio" name="q4" value="c"> c) Sriwijaya</label>
+                        <label><input type="radio" name="q4" value="d"> d) Singasari</label>
+                    </div>
+                </div>
+
+                <div class="soal-item">
+                    <p>Soal 5: Raja terbesar Kerajaan Majapahit yang didampingi oleh Mahapatih Gajah Mada dalam menyatukan Nusantara adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="a"> a) Kertanegara</label>
+                        <label><input type="radio" name="q5" value="b"> b) Raden Wijaya</label>
+                        <label><input type="radio" name="q5" value="c"> c) Hayam Wuruk</label>
+                        <label><input type="radio" name="q5" value="d"> d) Balaputradewa</label>
+                    </div>
+                </div>
+
+                <div class="soal-item">
+                    <p>Soal 6: Sumpah yang diucapkan oleh Gajah Mada untuk menyatukan seluruh Nusantara di bawah kekuasaan Majapahit dikenal dengan nama...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="a"> a) Sumpah Pemuda</label>
+                        <label><input type="radio" name="q6" value="b"> b) Sumpah Palapa</label>
+                        <label><input type="radio" name="q6" value="c"> c) Sumpah Amukti Palapa</label>
+                        <label><input type="radio" name="q6" value="d"> d) Sumpah Setia</label>
+                    </div>
+                </div>
+
+                <div class="soal-item">
+                    <p>Soal 7: Candi Buddha terbesar di dunia yang terletak di Jawa Tengah dan merupakan warisan Kerajaan Mataram Kuno adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="a"> a) Prambanan</label>
+                        <label><input type="radio" name="q7" value="b"> b) Borobudur</label>
+                        <label><input type="radio" name="q7" value="c"> c) Mendut</label>
+                        <label><input type="radio" name="q7" value="d"> d) Dieng</label>
+                    </div>
+                </div>
+
+                <div class="soal-item">
+                    <p>Soal 8: Kerajaan Hindu yang terletak di Jawa Barat dan terkenal dengan prasasti Ciaruteun yang memuat telapak kaki Raja Purnawarman adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="a"> a) Kutai</label>
+                        <label><input type="radio" name="q8" value="b"> b) Tarumanegara</label>
+                        <label><input type="radio" name="q8" value="c"> c) Sunda</label>
+                        <label><input type="radio" name="q8" value="d"> d) Galuh</label>
+                    </div>
+                </div>
+
+                <div class="soal-item">
+                    <p>Soal 9: Proses percampuran antara budaya Hindu-Buddha dengan budaya asli Nusantara tanpa menghilangkan unsur aslinya disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="a"> a) Asimilasi</label>
+                        <label><input type="radio" name="q9" value="b"> b) Akulturasi</label>
+                        <label><input type="radio" name="q9" value="c"> c) Akomodasi</label>
+                        <label><input type="radio" name="q9" value="d"> d) Inkulturasi</label>
+                    </div>
+                </div>
+
+                <div class="soal-item">
+                    <p>Soal 10: Salah satu bukti akulturasi budaya Hindu dengan kearifan lokal Nusantara dapat dilihat pada bentuk arsitektur candi yang merupakan perpaduan antara konsep meru dengan...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="a"> a) Rumah adat tongkonan</label>
+                        <label><input type="radio" name="q10" value="b"> b) Punden berundak</label>
+                        <label><input type="radio" name="q10" value="c"> c) Gapura candi bentar</label>
+                        <label><input type="radio" name="q10" value="d"> d) Menara masjid</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian B: Essay -->
+            <div class="card">
+                <h3 style="margin-bottom: 0.5rem;">✍️ Bagian B – Essay</h3>
+                <p style="color: #EF4444; font-size: 0.9rem; margin-bottom: 1.5rem; font-weight: 600;">⚠️ Pastikan Nama Lengkap dan NIS telah diisi! Setiap soal essay bernilai 20 poin.</p>
+
+                <div class="soal-item">
+                    <p>Soal Essay 1: Jelaskan empat teori utama mengenai masuknya Hindu-Buddha ke Nusantara beserta tokoh yang mengemukakannya!</p>
+                    <textarea name="essay1" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="soal-item">
+                    <p>Soal Essay 2: Uraikan secara kronologis perkembangan kerajaan-kerajaan Hindu-Buddha di Indonesia, mulai dari Kutai hingga Majapahit, beserta peninggalan utamanya!</p>
+                    <textarea name="essay2" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="soal-item">
+                    <p>Soal Essay 3: Analisislah perbedaan antara kerajaan bercorak agraris (contoh: Mataram Kuno) dengan kerajaan bercorak maritim (contoh: Sriwijaya) dalam aspek ekonomi, politik, dan warisan budaya!</p>
+                    <textarea name="essay3" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="soal-item">
+                    <p>Soal Essay 4: Jelaskan peran Kerajaan Sriwijaya sebagai pusat pembelajaran agama Buddha internasional dan bagaimana pengaruhnya terhadap jalur perdagangan di Asia Tenggara!</p>
+                    <textarea name="essay4" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="soal-item">
+                    <p>Soal Essay 5: Berikan tiga contoh konkret akulturasi antara budaya Hindu-Buddha dengan kearifan lokal Nusantara, dan jelaskan bagaimana akulturasi tersebut membentuk identitas budaya Indonesia hingga kini!</p>
+                    <textarea name="essay5" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+            </div>
+
+            <!-- Tombol Aksi -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary" onclick="hitungSkor()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+            </div>
+
+            <!-- Kotak Hasil -->
+            <div id="hasilBox" class="result-box">
+                <h3>📊 Hasil Uji Formatif</h3>
+                <p>Terima kasih telah menyelesaikan uji formatif ini, <span id="namaSiswaHasil" style="color: var(--gold-light); font-weight: 600;"></span>!</p>
+                
+                <div class="score-grid">
+                    <div class="score-item">
+                        <div class="value" id="skorPG">0</div>
+                        <div class="label">Skor Pilihan Ganda</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="value" id="skorEssay">Menunggu Review</div>
+                        <div class="label">Skor Essay (Maks. 100)</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="value" id="skorTotal">0</div>
+                        <div class="label">Skor Total (Maks. 200)</div>
+                    </div>
+                </div>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 1rem;">* Skor essay akan dinilai secara manual oleh guru/pengajar.</p>
+                
+                <div class="btn-group" style="justify-content: center;">
+                    <button type="button" class="btn btn-outline" style="border-color: var(--gold-primary); color: var(--gold-primary);" onclick="window.print()">📥 UNDUH PDF LENGKAP (Print)</button>
+                    <button type="button" class="btn btn-outline" style="border-color: white; color: white;" onclick="location.reload()">🔄 MULAI ULANG</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <footer>
+        <p><strong>Sejarah Indonesia Kelas X</strong></p>
+        <p>Buku daras untuk siswa. Teori, praktik, dan aplikasi berpikir sejarah.</p>
+        <p style="margin-top: 1rem;">
+            <a href="index.html">Beranda</a> | 
+            <a href="index.html#tentang">Tentang Buku</a> | 
+            <a href="index.html#daftar-isi">Daftar Bab</a> | 
+            <a href="index.html#penulis">Penulis</a>
+        </p>
+        <p style="margin-top: 1.5rem;">📧 <a href="mailto:elsaevikayanti@gmail.com">elsaevikayanti@gmail.com</a></p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">© 2026 Elsa Evikayanti, S.Pd. Hak cipta dilindungi.</p>
+    </footer>
+
+    <script>
+        // Kunci Jawaban Pilihan Ganda Bab 3
+        const kunciJawaban = {
+            q1: 'c', q2: 'b', q3: 'b', q4: 'c', q5: 'c',
+            q6: 'b', q7: 'b', q8: 'b', q9: 'b', q10: 'b'
+        };
+
+        function hitungSkor() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            
+            if (!nama || !nis) {
+                alert('⚠️ Harap lengkapi Nama Lengkap dan NIS terlebih dahulu!');
+                return;
+            }
+
+            let skorPG = 0;
+            for (let i = 1; i <= 10; i++) {
+                const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+                if (jawaban && jawaban.value === kunciJawaban[`q${i}`]) {
+                    skorPG += 10;
+                }
+            }
+
+            document.getElementById('namaSiswaHasil').textContent = nama;
+            document.getElementById('skorPG').textContent = skorPG;
+            document.getElementById('skorTotal').textContent = skorPG + " + Review";
+            
+            const hasilBox = document.getElementById('hasilBox');
+            hasilBox.style.display = 'block';
+            hasilBox.scrollIntoView({ behavior: 'smooth' });
+            
+            alert('✅ Jawaban berhasil disimpan! Skor Pilihan Ganda Anda: ' + skorPG + '/100. Skor Essay akan dinilai oleh pengajar.');
+        }
+
+        document.getElementById('tanggal').valueAsDate = new Date();
+    </script>
+</body>
+</html>
